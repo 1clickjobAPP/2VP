@@ -1,0 +1,24 @@
+# Filled / live copies of the dashboard must never be committed —
+# they may contain client data, real rates, or credentials.
+dashboards/*-filled.xlsx
+dashboards/*-live.xlsx
+dashboards/*-private.xlsx
+dashboards/credentials*.xlsx
+
+# Anything explicitly marked secret
+*secret*
+*credentials*.csv
+*passwords*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Excel lock files
+~$*.xlsx
