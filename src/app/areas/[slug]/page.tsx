@@ -7,6 +7,7 @@ import { site } from "@/lib/site";
 import { CTAButtons } from "@/components/CTAButtons";
 import { AreaFAQ, buildAreaFAQ } from "@/components/AreaFAQ";
 import { PriceBands } from "@/components/PriceBands";
+import { LeadForm } from "@/components/LeadForm";
 import { buildServicesLd, getAreaPricing } from "@/lib/pricing";
 
 export const dynamicParams = false;
@@ -231,6 +232,11 @@ export default function AreaPage({ params }: { params: { slug: string } }) {
             <CTAButtons area={area} />
           </div>
         </div>
+      </section>
+
+      {/* Lead capture */}
+      <section className="mx-auto max-w-3xl px-4 py-12" id="enquire">
+        <LeadForm area={area} />
       </section>
 
       {/* FAQ */}
