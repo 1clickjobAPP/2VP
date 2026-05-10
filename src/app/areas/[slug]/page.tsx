@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 import { CTAButtons } from "@/components/CTAButtons";
 import { AreaFAQ, buildAreaFAQ } from "@/components/AreaFAQ";
 import { PriceBands } from "@/components/PriceBands";
-import { getAreaPricing } from "@/lib/pricing";
+import { buildServicesLd, getAreaPricing } from "@/lib/pricing";
 
 export const dynamicParams = false;
 
@@ -93,6 +93,8 @@ export default function AreaPage({ params }: { params: { slug: string } }) {
       acceptedAnswer: { "@type": "Answer", text: f.a },
     })),
   };
+
+  const servicesLd = buildServicesLd(area);
 
   return (
     <article>
@@ -299,6 +301,10 @@ export default function AreaPage({ params }: { params: { slug: string } }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesLd) }}
       />
     </article>
   );

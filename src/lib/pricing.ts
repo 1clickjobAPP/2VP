@@ -123,3 +123,68 @@ export function tierCounts() {
   for (const a of areas) counts[getTier(a.slug)]++;
   return counts;
 }
+
+interface ServiceLdInput {
+  name: string;
+  serviceType: string;
+  band: PriceBand;
+}
+
+export function buildServicesLd(area: Area) {
+  const pricing = getAreaPricing(area.slug);
+  const calcUrl = buildCalculatorUrl(area);
+  const businessId = `${site.url}/areas/${area.slug}#business`;
+
+  const items: ServiceLdInput[] = [
+    {
+      name: `House Extensions in ${area.name}`,
+      serviceType: "House extension construction",
+      band: pricing.extensions,
+    },
+    {
+      name: `Loft Conversions in ${area.name}`,
+      serviceType: "Loft conversion construction",
+      band: pricing.lofts,
+    },
+    {
+      name: `Full Refurbishments in ${area.name}`,
+      serviceType: "Whole-house refurbishment",
+      band: pricing.refurbishments,
+    },
+    {
+      name: `Kitchens & Bathrooms in ${area.name}`,
+      serviceType: "Kitchen and bathroom installation",
+      band: pricing.kitchensBathrooms,
+    },
+  ];
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": items.map((item) => ({
+      "@type": "Service",
+      name: item.name,
+      serviceType: item.serviceType,
+      provider: { "@id": businessId },
+      areaServed: { "@type": "Place", name: `${area.name}, London` },
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "GBP",
+        url: calcUrl,
+        availability: "https://schema.org/InStock",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          priceCurrency: "GBP",
+          minPrice: item.band.low,
+          maxPrice: item.band.high,
+          unitCode: "MTK",
+          unitText: "square metre",
+          referenceQuantity: {
+            "@type": "QuantitativeValue",
+            value: 1,
+            unitCode: "MTK",
+          },
+        },
+      },
+    })),
+  };
+}
