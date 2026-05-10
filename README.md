@@ -23,8 +23,14 @@ npm run build && npm start
 ## Lead capture
 
 Each area page embeds `<LeadForm />` which POSTs to `/api/lead`. Set
-`LEAD_WEBHOOK_URL` in your environment (Zapier / Make / Slack / CRM
-endpoint) and submissions get forwarded as JSON. See `.env.example`.
+`LEAD_WEBHOOK_URL` in your environment (Google Sheets / Zapier / Make /
+Slack / CRM endpoint) and submissions get forwarded as JSON. See
+`.env.example`.
+
+**Recommended:** drop leads into a Google Sheet via a 5-minute Apps
+Script setup. Full walkthrough in
+[`docs/leads-to-sheets.md`](./docs/leads-to-sheets.md). Script code is
+in [`docs/leads-to-sheets.gs`](./docs/leads-to-sheets.gs).
 
 Payload shape:
 
