@@ -6,6 +6,8 @@ import { services } from "@/data/services";
 import { site } from "@/lib/site";
 import { CTAButtons } from "@/components/CTAButtons";
 import { AreaFAQ, buildAreaFAQ } from "@/components/AreaFAQ";
+import { PriceBands } from "@/components/PriceBands";
+import { getAreaPricing } from "@/lib/pricing";
 
 export const dynamicParams = false;
 
@@ -45,6 +47,7 @@ export default function AreaPage({ params }: { params: { slug: string } }) {
 
   const neighbours = getNeighbours(area.slug);
   const faqs = buildAreaFAQ(area);
+  const pricing = getAreaPricing(area.slug);
   const url = `${site.url}/areas/${area.slug}`;
 
   const localBusinessLd = {
@@ -109,7 +112,7 @@ export default function AreaPage({ params }: { params: { slug: string } }) {
             survey at a time that suits you.
           </p>
           <div className="mt-6">
-            <CTAButtons context={area.name} />
+            <CTAButtons area={area} />
           </div>
           <p className="mt-4 text-sm text-white/70">
             Speak to a project manager:{" "}
@@ -166,6 +169,9 @@ export default function AreaPage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
+      {/* Per-area price bands */}
+      <PriceBands area={area} />
+
       {/* Why 2VP */}
       <section className="mx-auto max-w-6xl px-4 py-12">
         <h2 className="text-2xl font-bold text-slate-900">
@@ -211,15 +217,16 @@ export default function AreaPage({ params }: { params: { slug: string } }) {
         <div className="mx-auto max-w-6xl px-4 py-12 md:py-16 grid gap-6 md:grid-cols-2 items-center">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold">
-              Try the free 2VP calculator
+              Calculator tuned for {area.name}
             </h2>
             <p className="mt-3 text-white/85">
-              Get an instant per-square-metre estimate tuned for {area.name} build costs.
-              Takes under a minute, no contact details needed up-front.
+              Click through and the calculator opens pre-set to {area.name} ({pricing.tier}
+              -tier London pricing). Get a per-square-metre estimate in under a minute, no
+              contact details needed up-front.
             </p>
           </div>
           <div className="md:text-right">
-            <CTAButtons context={area.name} />
+            <CTAButtons area={area} />
           </div>
         </div>
       </section>
@@ -266,7 +273,7 @@ export default function AreaPage({ params }: { params: { slug: string } }) {
             managers.
           </p>
           <div className="mt-5 flex justify-center">
-            <CTAButtons context={area.name} />
+            <CTAButtons area={area} />
           </div>
           <p className="mt-3 text-sm text-slate-600">
             Or call us directly:{" "}
