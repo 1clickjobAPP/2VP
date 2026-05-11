@@ -1,0 +1,548 @@
+# Marketing.Rules.2VP.Master
+
+> Single source of truth for how the 2VP marketing site is built, ranked,
+> tracked and converted. Everything that previously lived in chat threads,
+> audit notes and code comments is consolidated here. If a rule below
+> conflicts with an ad-hoc decision, this document wins. Edits to this
+> file are the only sanctioned way to change the rules.
+
+- **Owner:** 2VP marketing (hi@2vp.uk · 020 8050 8968)
+- **Scope:** 2vp.uk, all sub-paths, and any future micro-sites bearing the 2VP name
+- **Last consolidated:** 2026-05-11
+- **Living document:** review at the start of every quarter and after any algorithm-level Google update
+
+---
+
+## Table of contents
+
+1. Brand, voice and tone
+2. Service catalogue
+3. Geographic coverage (59 areas)
+4. Pricing model
+5. Site information architecture
+6. SEO rules — technical
+7. SEO rules — on-page
+8. SEO rules — schema / JSON-LD
+9. SEO rules — internal linking
+10. Keyword rules and target matrix
+11. Content rules — uniqueness, length, structure
+12. Conversion rules — CTAs, forms, pricing display
+13. Tracking and measurement rules
+14. Lead-handling rules
+15. Email rules
+16. Legal, GDPR and compliance rules
+17. Performance, accessibility and security rules
+18. Code, deploy and operational rules
+19. 90-day roadmap
+20. Top priorities
+
+---
+
+## 1. Brand, voice and tone
+
+**B-1.** Brand name is **2VP**. Legal name **2VP Construction**. Never abbreviate further (no "2V", no "VP").
+
+**B-2.** Voice is **plain-English, confident, technical when it matters**. We write the way a senior project manager talks to a serious homeowner: short sentences, named trades, no jargon for jargon's sake, no marketing fluff. If a sentence could appear on any builder's site, rewrite it until it can only appear on ours.
+
+**B-3.** Never use phrases like "passionate about", "your dream home", "we love what we do". They are conversion-neutral and brand-negative.
+
+**B-4.** UK English everywhere (`-ise`, `-our`, `colour`, `behaviour`, `programme` not `program`). British currency formatting (`£250,000` or `£250k`, never `$` or commas-as-decimals).
+
+**B-5.** Phone: `020 8050 8968`. Email: `hi@2vp.uk`. These appear identically on every page (header, footer, CTAs). NAP consistency is non-negotiable — also required on Google Business Profile.
+
+**B-6.** Primary colour `#0a3d62` (brand), accent `#e6a23c` (brand.accent). Ink `#0b1220`. Don't introduce new brand colours without updating `tailwind.config.ts` and this document.
+
+---
+
+## 2. Service catalogue
+
+**S-1.** Four canonical services. Listed in this order on every page that mentions multiple services:
+
+1. **House Extensions** — single and double-storey rear, side-return, wrap-around.
+2. **Loft Conversions** — dormer, mansard, hip-to-gable, L-shape, Velux.
+3. **Full Refurbishments** — whole-house strip-out, structural, M&E, joinery, decoration.
+4. **Kitchens & Bathrooms** — bespoke installs, en-suites, wet rooms, stone, tiling.
+
+**S-2.** No additional services may be added to the site without updating `src/data/services.ts`, this section, and the rules in §11.
+
+**S-3.** Each service ALWAYS appears with the same four bullets defined in `src/data/services.ts`. Variations across area pages are not allowed.
+
+---
+
+## 3. Geographic coverage (59 areas)
+
+**G-1.** The site explicitly targets **all 33 London boroughs + 26 prime / high-intent areas = 59 area pages**. The canonical list lives in `src/data/areas.ts`.
+
+**G-2.** No area page may be added without:
+- a unique slug
+- a real postcode list
+- a 1-2 sentence "character" paragraph
+- a 1-2 sentence "planning" paragraph
+- 3-5 neighbouring slugs for internal linking
+
+**G-3.** No area page may be removed without a 301 redirect (in `next.config.mjs`) pointing to the most semantically similar surviving area.
+
+**G-4.** Boroughs and prime areas are tagged via `type: "borough" | "prime"`. Prime areas may live inside a borough's territory (e.g. Mayfair inside Westminster). This duplication is intentional — we want both queries to land on the most relevant page.
+
+**G-5.** Pricing tier (`prime` / `inner` / `outer`) is set in `src/lib/pricing.ts`. Adding a new area requires explicitly assigning it to a tier in `PRIME_SLUGS` or `INNER_SLUGS`, otherwise it defaults to `outer`.
+
+### Master area list (frozen)
+
+**33 boroughs:** City of London, Barking and Dagenham, Barnet, Bexley, Brent, Bromley, Camden, Croydon, Ealing, Enfield, Greenwich, Hackney, Hammersmith and Fulham, Haringey, Harrow, Havering, Hillingdon, Hounslow, Islington, Kensington and Chelsea, Kingston upon Thames, Lambeth, Lewisham, Merton, Newham, Redbridge, Richmond upon Thames, Southwark, Sutton, Tower Hamlets, Waltham Forest, Wandsworth, Westminster.
+
+**26 prime / high-intent:** Mayfair, Notting Hill, Chelsea, Knightsbridge, Belgravia, Marylebone, Fitzrovia, Soho, Kensington, Holland Park, Hampstead, Highgate, Primrose Hill, St John's Wood, Shoreditch, Clapham, Battersea, Fulham, Wimbledon, Putney, Dulwich, Blackheath, Angel, Stoke Newington, Wapping, Canary Wharf.
+
+---
+
+## 4. Pricing model
+
+**P-1.** Three tiers map every area to per-square-metre price bands:
+
+| Tier   | Extensions    | Lofts         | Refurbishments | Kitchens & Bathrooms |
+|--------|---------------|---------------|----------------|----------------------|
+| Prime  | £4,200–6,500  | £2,800–4,200  | £2,600–4,200   | £2,200–4,000         |
+| Inner  | £3,200–4,800  | £2,200–3,400  | £2,000–3,200   | £1,800–3,200         |
+| Outer  | £2,600–3,800  | £1,800–2,800  | £1,500–2,400   | £1,400–2,600         |
+
+**P-2.** These bands are **indicative only** and must always be qualified with "indicative" or "typical" copy on the page (already in `PriceBands.tsx`).
+
+**P-3.** Final per-project quotes come from the calculator on `2vp.uk/calculator`. Marketing pages must never display a fixed price for a specific job.
+
+**P-4.** Pricing tier labels shown to users use **neutral language**: "London suburban", "inner London", "prime central London". Never write "outer-tier" in user-facing copy (it reads as a downgrade). Internal tier slugs (`prime` / `inner` / `outer`) are for code and analytics only.
+
+**P-5.** When pricing on a real project diverges from the published band by more than ±20% in either direction, the band needs reviewing. Track this in the leads sheet by adding a "Final quote" column.
+
+---
+
+## 5. Site information architecture
+
+**A-1.** Routes are:
+
+```
+/                          → home
+/areas                     → index of all 59
+/areas/[slug]              → 59 area landing pages
+/services/[slug]           → 4 service hubs (roadmap, week 3)
+/insights                  → editorial / blog (roadmap, week 7)
+/insights/[slug]           → individual posts
+/calculator                → external (2vp.uk/calculator)
+/book                      → external (2vp.uk/book)
+/api/lead                  → form receiver, server-only
+/privacy                   → legal (roadmap, week 1)
+/terms                     → legal (roadmap, week 1)
+/sitemap.xml               → auto-generated
+/robots.txt                → auto-generated
+```
+
+**A-2.** Maximum click depth from home to any monetised page (area page, service page) is **2**. Maximum depth from home to any leaf page is **3**.
+
+**A-3.** Every page must link to: (a) home, (b) `/areas`, (c) the calculator, (d) the booking form, (e) the privacy policy.
+
+**A-4.** No JavaScript-only routes. Every monetised page is statically generated and indexable.
+
+---
+
+## 6. SEO rules — technical
+
+**SEO-T-1.** `metadataBase` is set in `src/app/layout.tsx`. Always source `site.url` from `process.env.NEXT_PUBLIC_SITE_URL` once preview deploys are in play — never hard-code per deploy.
+
+**SEO-T-2.** Every page must have:
+- a unique `<title>` (50–60 chars)
+- a unique `<meta name="description">` (140–155 chars)
+- a self-referencing `<link rel="canonical">`
+- valid Open Graph tags (`og:title`, `og:description`, `og:url`, `og:image`, `og:type`)
+- valid Twitter card tags
+- one `<h1>` (and exactly one)
+- a logical H2/H3 hierarchy
+
+**SEO-T-3.** **NEVER allow the title template to double the brand suffix.** If `generateMetadata` returns a title that already ends in `| 2VP`, the layout template MUST be set to `%s` (not `%s | 2VP`), or the per-page title MUST drop the suffix. Audit on every PR that touches metadata.
+
+**SEO-T-4.** `og:image` is required on every page. Default fallback: `/og-default.jpg` (1200×630, brand-coloured, with the 2VP wordmark). Area pages must additionally generate a per-area image via `src/app/areas/[slug]/opengraph-image.tsx` so previews carry the area name.
+
+**SEO-T-5.** `sitemap.xml` is generated from `src/data/areas.ts`. Any new page type added to the app must also be added to `src/app/sitemap.ts`.
+
+**SEO-T-6.** `robots.txt` allows all crawlers everywhere. Disallow only `/api/`. Re-submit the sitemap in Google Search Console + Bing Webmaster Tools on every meaningful sitemap change.
+
+**SEO-T-7.** Use 301 redirects for any URL change. Never delete a page that has been indexed or linked externally — redirect it.
+
+**SEO-T-8.** Page load: First Contentful Paint < 1.5s on Vercel from London. Largest Contentful Paint < 2.0s. Cumulative Layout Shift < 0.05. Test monthly with Lighthouse + PageSpeed Insights.
+
+**SEO-T-9.** Vercel region is pinned to `lhr1` (London) in `vercel.json`. Don't change without an explicit reason.
+
+---
+
+## 7. SEO rules — on-page
+
+**SEO-O-1.** Title formula for area pages: `Builders in {Area} | Extensions, Lofts & Refurbishments | 2VP`. Never double the `| 2VP`.
+
+**SEO-O-2.** Title formula for service hubs (when built): `{Service} in London | 2VP Construction`.
+
+**SEO-O-3.** Meta description must include: service name, area or "London", a benefit phrase (free calculator / fixed price / one-stop), and never exceed 155 characters.
+
+**SEO-O-4.** H1 must contain the **area name AND at least one service term**. Example: "Extensions, loft conversions & refurbishments in Camden".
+
+**SEO-O-5.** First 100 words of the body must contain the area name at least twice and at least three of the service names.
+
+**SEO-O-6.** Area name density across the page: 0.8% – 1.6%. (Roughly 8–16 mentions in a 1000-word page.) Do not exceed.
+
+**SEO-O-7.** Postcode list is rendered in the hero subhead and in the FAQ ("Do you cover the whole of {area}?"). This is mandatory — postcode queries are high-intent.
+
+**SEO-O-8.** External links to the calculator and booking flow are `dofollow` (we want them to pass authority to 2vp.uk's conversion pages). External links to non-2VP domains (Google reviews, accreditation bodies, planning portals) are `rel="noopener"` and may be `dofollow` only if the destination is a non-competing authority.
+
+---
+
+## 8. SEO rules — schema / JSON-LD
+
+**SEO-S-1.** Every area page emits **four** JSON-LD blocks:
+
+1. `GeneralContractor` (the LocalBusiness sub-type for the area) with `@id` of `${url}#business`. Fields: `name`, `url`, `telephone`, `email`, `image`, `priceRange`, `areaServed`, `address`, `serviceType`.
+2. `BreadcrumbList`: Home → Areas → {Area}.
+3. `FAQPage`: 5 questions from `buildAreaFAQ()`.
+4. `@graph` of 4 `Service` entities — one per service — each with an `Offer` containing `UnitPriceSpecification` (`minPrice`, `maxPrice`, `priceCurrency: GBP`, `unitCode: MTK`, `unitText: "square metre"`).
+
+**SEO-S-2.** The `Service.provider` field MUST reference the LocalBusiness by `@id` (not duplicate the business node). This avoids Google de-duplication issues.
+
+**SEO-S-3.** Validate all schema using <https://search.google.com/test/rich-results> before any change ships to production.
+
+**SEO-S-4.** Once the Google Business Profile is live, add `sameAs` to the LocalBusiness schema pointing at the GBP URL, plus social profiles when those exist.
+
+**SEO-S-5.** When the brand earns reviews on Google or Trustpilot, surface them via `AggregateRating` inside the LocalBusiness node. Never fabricate ratings.
+
+---
+
+## 9. SEO rules — internal linking
+
+**SEO-L-1.** Every area page must link to: 3-5 neighbouring area pages (already wired through `getNeighbours()`), all 4 service hubs (when built), the homepage, the calculator and the booking flow.
+
+**SEO-L-2.** The footer lists ALL 59 area pages on every page of the site. Do not remove or paginate this — it is the primary internal-link graph.
+
+**SEO-L-3.** When the blog (`/insights`) is live, every post must link to at least 2 area pages and 1 service hub, by name, in the body.
+
+**SEO-L-4.** Anchor text variety: avoid using identical anchor for every internal link. Mix natural-language anchors ("our Camden loft conversions", "Hampstead extensions", "see Hackney") rather than just "{Area}" everywhere.
+
+**SEO-L-5.** No orphan pages. Every URL in the sitemap must be reachable from at least one other URL in the sitemap via a `<a href>`.
+
+---
+
+## 10. Keyword rules and target matrix
+
+### 10.1 Head terms (primary)
+
+These are the volume queries every page implicitly targets via H1 + meta:
+
+- `house extensions London`
+- `side return extension London`
+- `loft conversion London`
+- `mansard loft London`
+- `house renovation London`
+- `house refurbishment London`
+- `kitchen fitters London`
+- `bathroom installation London`
+
+**K-1.** Head terms are reserved for the **service hub** pages (when built). Area pages should not try to outrank service hubs on bare head terms — they target the head-term × area-modifier intersection.
+
+### 10.2 Area-modifier patterns (the matrix)
+
+For every area `{A}` and every service `{S}`, the following query patterns are in-scope:
+
+- `builders in {A}`
+- `construction company {A}`
+- `{A} builders`
+- `{S} {A}`
+- `{S} in {A}`
+- `best {S} {A}`
+- `how much does a {S} cost in {A}`
+- `{S} cost {A}`
+- `{S} planning permission {A}`
+
+**K-2.** The H1 covers `builders in {A}` and `{S} in {A}` simultaneously. The price-band block covers cost queries. The FAQ covers planning-permission queries. Do not remove any of these page sections — each one earns a different SERP feature.
+
+### 10.3 Long-tail / informational queries
+
+These are content opportunities for the blog (`/insights`):
+
+- `Article 4 direction {area}`
+- `conservation area planning {area}`
+- `{area} basement extension policy`
+- `party wall agreement London`
+- `permitted development rules 2026 London`
+- `CIL charges {borough}`
+- `mansard vs dormer loft conversion`
+- `side return extension steel design`
+
+**K-3.** Every blog post targets exactly one long-tail head intent and links into 2+ area pages by name.
+
+### 10.4 Negative / do-not-target
+
+Avoid targeting these queries — they're noise, low intent, or bad fits:
+
+- Anything mentioning "DIY" — wrong audience
+- "Cheap builders London" — wrong positioning
+- Locations outside Greater London — dilutes local relevance
+- Pure cost queries with no commercial context ("how much is concrete per m³") — informational, not buyer
+- "Builder near me" without geographic context — we can't optimise for proximity queries from non-buyers
+- "Building regulations London PDF" — not a buyer query, just a downloader
+
+### 10.5 Keyword targeting per page type
+
+| Page type           | Primary intent          | Example primary query                | Example secondary queries                                  |
+|---------------------|-------------------------|--------------------------------------|------------------------------------------------------------|
+| Home                | Brand + service breadth | `2VP construction London`            | `London builders`, `London construction company`           |
+| `/areas/{A}`        | Local intent            | `builders in Camden`                 | `extensions Camden`, `loft conversion NW1`                 |
+| `/services/{S}`     | Service head term       | `loft conversions London`            | `mansard loft conversion`, `dormer loft London`            |
+| `/insights/{post}`  | Informational long-tail | `Article 4 direction Camden`         | `Camden planning permission`, `Camden conservation area`   |
+
+**K-4.** Cannibalisation rule: two pages on 2vp.uk must not target the same primary query. If a new page would do this, split the intent or merge the pages.
+
+---
+
+## 11. Content rules — uniqueness, length, structure
+
+**C-1.** Word count targets:
+- Home: 400–600
+- Service hub: 1000–1400
+- Area page: 600–800 (currently ~750 ✅)
+- Blog post: 1200–2000
+
+**C-2.** **Uniqueness floor: no more than 35% of sentences on any area page may be shared with another area page.** Current measured overlap (Camden vs Barnet) is 43% — must be reduced before traffic scales.
+
+**C-3.** Per-area unique blocks (mandatory once content is mature):
+- Unique 1-2 sentence `character` paragraph (already in `areas.ts` ✅)
+- Unique 1-2 sentence `planning` paragraph (already in `areas.ts` ✅)
+- Unique 100–150 word "recent work in {area}" block (TO ADD)
+- Unique testimonial OR varied wording on at least 2 of 5 FAQ answers (TO ADD)
+
+**C-4.** Real or representative project mentions must use postcodes (not full addresses) and never name a customer without written consent. Add a "Project consent" column to the leads sheet for tracking.
+
+**C-5.** Stock copy of phrases that appear on every page (Why-2VP grid, Services bullets, contact strip) is allowed as long as the unique copy floor (C-2) is met.
+
+**C-6.** All copy must be original, written for 2VP. No AI-generated content may ship without a human pass that rewrites every paragraph for 2VP voice (see §1).
+
+**C-7.** Spelling / grammar pass required before publishing any new page. UK English (see B-4).
+
+---
+
+## 12. Conversion rules — CTAs, forms, pricing display
+
+**CV-1.** Every area page must show the dual CTA (Calculator + Book Survey) at minimum **three** times: hero, mid-page banner, final block. Already enforced by the template.
+
+**CV-2.** Calculator URL must include `?area={slug}&tier={prime|inner|outer}&postcode={first-postcode}` so the calculator can pre-fill location and apply the tier. Implemented in `buildCalculatorUrl()`.
+
+**CV-3.** Booking URL must include `?area={slug}` so 2VP attribution knows which page produced the survey request.
+
+**CV-4.** Phone number `020 8050 8968` must be visible above the fold on every page (header bar) and clickable as `tel:+442080508968`.
+
+**CV-5.** Lead form rules:
+- Required fields: name, email, **project type**, budget, area
+- Phone field is **optional** (current page-state has it required — this is on the roadmap to fix; see audit P1 item #9)
+- Honeypot field `company` is mandatory and visually hidden via `position: absolute; left: -9999px`
+- 1.5 second render gate against bot submissions
+- Success state must thank the user, mention the SLA ("within one working day") and provide the phone number for impatient callers
+
+**CV-6.** Pricing display rules:
+- Price bands shown on every area page in the order: Extensions → Lofts → Refurbishments → Kitchens & Bathrooms
+- Always paired with the disclaimer "indicative ranges only"
+- The "Tune my estimate" CTA inside the price-band block deep-links to the calculator with the tuned URL
+- Never show a single point price — always a range
+
+**CV-7.** Trust signals (target state, not all yet in place):
+- FMB, TrustMark, CHAS, Constructionline, Which? Trusted Trader badges in footer
+- Google reviews rating + count strip in hero
+- "Featured in" press logos when earned
+- Insurance + ICO registration numbers in footer
+
+**CV-8.** Project gallery: every area page should show 3–6 representative project thumbnails. Photography must be real or licensed (no AI-generated imagery without disclosure).
+
+**CV-9.** Urgency / availability indicator: a soft "Booking surveys 2 weeks ahead in {area}" banner near the form is permitted IF the number is true. Never fake urgency.
+
+---
+
+## 13. Tracking and measurement rules
+
+**T-1.** **Tracking is mandatory on every page that ships to production.** A page without analytics may not go live.
+
+**T-2.** Primary analytics: **Vercel Web Analytics** (cookie-less, free, accurate) + **Plausible** (event-level visibility, no consent banner needed). GA4 is acceptable as a parallel if needed for ads attribution; if installed it MUST run under Google Consent Mode v2.
+
+**T-3.** Events to track (snake_case naming):
+
+| Event              | Trigger                                    | Properties                              |
+|--------------------|--------------------------------------------|-----------------------------------------|
+| `page_view`        | every page load                            | `path`, `area_slug?`, `tier?`           |
+| `calculator_click` | any calculator CTA click                   | `area_slug`, `tier`, `placement`        |
+| `book_click`       | any booking CTA click                      | `area_slug`, `placement`                |
+| `form_start`       | first focus inside the lead form           | `area_slug`                             |
+| `form_submit`      | server confirms 200 from `/api/lead`       | `area_slug`, `tier`, `project_type`, `budget` |
+| `phone_click`      | `tel:` link click                          | `placement`                             |
+| `email_click`      | `mailto:` link click                       | `placement`                             |
+
+**T-4.** Source attribution: pass-through any `utm_*` query params from the landing page into the calculator URL, the booking URL and the `/api/lead` payload. Never strip them.
+
+**T-5.** No tracking pixels for ad platforms (Meta, TikTok, LinkedIn) may be added without an updated cookie banner + consent flow.
+
+**T-6.** Weekly review: every Monday, pull a "previous-7-days" view of `form_submit` count by `area_slug` and `tier`. Use this to prioritise the next week's content / spend.
+
+---
+
+## 14. Lead-handling rules
+
+**L-1.** Leads land in:
+1. Google Sheet (via Apps Script web app)
+2. `hi@2vp.uk` inbox (internal alert email)
+3. The lead's own inbox (confirmation email)
+
+**L-2.** Response SLA: **one working day** maximum from form submission to first human contact. The confirmation email promises this — breaking the promise breaks trust.
+
+**L-3.** Sheet hygiene: every Friday, archive leads older than 90 days that have been converted, lost or marked spam. Keep an audit trail (a second tab) before deleting.
+
+**L-4.** Project-manager assignment: each lead should be assigned to a PM via a "Owner" column in the sheet within 4 working hours of arrival.
+
+**L-5.** Lead status taxonomy in the sheet:
+- `new` (default on row append)
+- `contacted` (PM called or emailed)
+- `survey-booked` (calendar slot held)
+- `quoted` (proposal sent)
+- `won` (project signed)
+- `lost-price`, `lost-timing`, `lost-fit`, `lost-other`
+- `spam`
+
+**L-6.** No lead's contact details may be shared outside 2VP without their written consent. Section 17 (legal) governs this.
+
+---
+
+## 15. Email rules
+
+**E-1.** All transactional email (lead alerts + confirmations) is sent from the Apps Script attached to the leads sheet. The script is owned by `hi@2vp.uk` (or "send mail as" is configured), so the From address is `hi@2vp.uk`.
+
+**E-2.** Internal alert email rules:
+- Subject: `New 2VP lead — {Name}, {Area} ({Project type})`
+- Body includes all lead details
+- Reply-To set to the lead's email so hitting Reply contacts the customer directly
+
+**E-3.** Confirmation email rules:
+- Subject: `Thanks for getting in touch with 2VP — your {Area} project`
+- Plain text (HTML version is a follow-up enhancement)
+- Reply-To set to `hi@2vp.uk`
+- Always include the calculator URL tuned for the area, the phone number, and an enquiry summary
+- Must include an unsubscribe path or be classified strictly as transactional (PECR/CAN-SPAM safe). Currently transactional only — do not repurpose for marketing.
+
+**E-4.** Marketing / nurture emails are out of scope for the current setup. To start nurture sequences, the form needs an explicit "opt-in to receive updates" checkbox and a separate ESP (Resend / SendGrid).
+
+**E-5.** Apps Script daily mail quota: 100/day on free Gmail, 1500/day on Workspace. If volume exceeds 50 leads/day on free or 700/day on Workspace, migrate to a dedicated transactional ESP.
+
+---
+
+## 16. Legal, GDPR and compliance rules
+
+**LG-1.** UK GDPR / Data Protection Act 2018 applies. 2VP is the data controller. ICO registration is mandatory (~£40/year) — confirm it's in place.
+
+**LG-2.** Required pages: `/privacy` and `/terms`. Both must be linked from:
+- The footer
+- The lead form (under the submit button)
+- The cookie banner (when one ships)
+
+**LG-3.** Privacy policy must state:
+- What data is collected (name, email, phone, postcode, IP, UA, source URL, project type, budget, message)
+- Why (to respond to the enquiry)
+- Legal basis (legitimate interest / contract preparation)
+- How long retained (90 days after last contact unless converted)
+- Who has access (2VP staff + Google as Sheets host)
+- Data subject rights and the contact route to exercise them
+- DPO / privacy contact email (`privacy@2vp.uk` recommended)
+
+**LG-4.** Cookie banner: required only if non-essential cookies / tracking pixels are added. Vercel Web Analytics + Plausible do not require one. The moment Meta / TikTok / GA4 (with cookies) lands, the banner must go live and consent must be checked before any non-essential tag fires.
+
+**LG-5.** Form consent copy (current and acceptable): "By submitting you agree to be contacted about your project. We don't share your details." When marketing opt-in is added, it must be a SEPARATE unticked checkbox with explicit copy ("Yes, send me 2VP updates by email").
+
+**LG-6.** Any reviews quoted on the site must use real, attributable names (first name + initial + area is acceptable) and may not be fabricated. Each must be backed by a written or digital record of the customer's permission to publish.
+
+**LG-7.** Construction-specific compliance — keep in mind for content claims:
+- CDM 2015 duties — only claim if compliant
+- Party Wall etc. Act 1996 — only claim if you handle these in-house
+- Building Regulations — only claim if you submit on the client's behalf
+- Public liability + employer's liability insurance — only state the cover level you actually carry. Inaccurate claims here are illegal.
+
+---
+
+## 17. Performance, accessibility and security rules
+
+**X-1.** Lighthouse score floor on `/areas/[any]`: 95+ Performance, 95+ SEO, 95+ Best Practices, 95+ Accessibility. Test monthly.
+
+**X-2.** No client-side JavaScript may be added to area pages beyond what the LeadForm already ships. New interactive features must be evaluated for SSR-ability first.
+
+**X-3.** Accessibility:
+- WCAG 2.2 AA conformance
+- Every form input has a programmatic `<label>` (already in place)
+- Body text colour contrast ≥ 4.5:1 against background. Switch any `text-slate-500` body text to `text-slate-600`
+- Focus states visible on every interactive element
+- All images have `alt` text — descriptive for content images, empty `alt=""` for decorative
+
+**X-4.** Images:
+- Use `next/image` (or `<img>` with width/height) — never an unsized `<img>` (CLS hit)
+- WebP / AVIF preferred, JPEG fallback
+- Lazy-load anything below the fold
+
+**X-5.** Security headers (set in `next.config.mjs` → `headers()`):
+- `Strict-Transport-Security: max-age=63072000; includeSubDomains; preload`
+- `X-Content-Type-Options: nosniff`
+- `Referrer-Policy: strict-origin-when-cross-origin`
+- `Permissions-Policy: camera=(), microphone=(), geolocation=()`
+- A starter CSP that allows self + Vercel Analytics + Plausible + Google Fonts (once Fonts are introduced)
+
+**X-6.** No third-party scripts may load on form pages without an explicit CSP allowance.
+
+---
+
+## 18. Code, deploy and operational rules
+
+**OP-1.** Branch model: feature branches off `main`. Today's working branch is `claude/london-landing-pages-bOcqW`. After review, merge to `main` and let Vercel auto-deploy.
+
+**OP-2.** Pull-request gate: every PR must pass `npm run build` locally before review. Once CI lands, lint + typecheck become CI-gated too.
+
+**OP-3.** Vercel environment variables:
+
+| Var                          | Where             | Purpose                                    |
+|------------------------------|-------------------|--------------------------------------------|
+| `LEAD_WEBHOOK_URL`           | production preview | Apps Script web app URL                    |
+| `NEXT_PUBLIC_SITE_URL`       | production         | `https://2vp.uk` (canonical origin)        |
+| `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` | production        | `2vp.uk` (set when Plausible is wired)     |
+
+**OP-4.** Apps Script edits require a new deployment version: **Deploy → Manage deployments → pencil → Version: New version → Deploy**. The web-app URL is stable; Vercel env doesn't change.
+
+**OP-5.** Domain pointing: `2vp.uk` (or `areas.2vp.uk`) is pointed at the Vercel project under **Project → Settings → Domains**.
+
+**OP-6.** Backups: the leads sheet is the system of record while volume is low. Apps Script writes are atomic; Google Drive retains version history. When volume grows, mirror leads to a backed-up CRM.
+
+**OP-7.** Monitoring: Vercel deployment status + Plausible "live visitors" check daily. Set up a Vercel deployment alert email to `hi@2vp.uk`.
+
+**OP-8.** Incident process: if `/api/lead` returns 5xx, leads are dropped. Set up a synthetic POST every 15 minutes via a Vercel cron or external monitor (BetterStack / Checkly). Alert on consecutive failures.
+
+---
+
+## 19. 90-day roadmap (consolidated)
+
+| Week | Theme              | Deliverables |
+|------|--------------------|--------------|
+| 1    | P0 fixes + tracking | Title double-suffix bug; OG image + per-area generator; install Vercel Analytics + Plausible; `lead_submit`, `calculator_click`, `book_click` events; privacy + terms drafted; security headers in `next.config.mjs`. |
+| 2    | Trust assets        | `<ProjectGallery />` component; 6–10 photo assets in `public/projects/`; FMB / TrustMark application started; 3 real testimonials drafted; Google Business Profile created and verified. |
+| 3    | Service hubs        | `/services/extensions`, `/services/loft-conversions`, `/services/refurbishments`, `/services/kitchens-bathrooms`. Internal links from every area page. Sitemap + Search Console resubmit. |
+| 4    | Friction reduction  | Make phone optional; soft availability banner per area; exit-intent PDF lead magnet ("2VP planning checklist"). |
+| 5–6  | Content uniqueness  | Per-area "recent local work" block on 10 areas/week; vary 2 of 5 FAQ answers per area; ensure cross-page sentence overlap < 35%. |
+| 7–8  | Insights / blog     | Publish 4 cornerstone pieces: Article 4 directions in Camden; conservation areas in Westminster; loft conversions in Hampstead; RBKC basement policy CL7. |
+| 9–10 | PPC variants        | 4–6 narrow LP variants for Google Ads, single-CTA, no nav. Conversion goal wired to GA4. |
+| 11–12| Measure + optimise  | 8-week analytics review; A/B test 2 hero variations + 2 form variations; tune `BAND_BY_TIER` against actual quote → close data; revisit this document and update for Q2. |
+
+---
+
+## 20. Top priorities
+
+If only five things get done in the next 14 days, do these in this order:
+
+1. **Fix the title double-suffix bug** (`SEO-T-3`). 10 minutes of work; every SERP impression improves immediately.
+2. **Install Vercel Web Analytics + Plausible + wire the 7 events from `T-3`.** Without measurement, every subsequent decision is guesswork.
+3. **Ship `/og-default.jpg` + per-area `opengraph-image.tsx`.** Stops social shares from looking broken.
+4. **Add a photo gallery + 3 real testimonials.** Single biggest conversion lever in the construction category.
+5. **Reduce form friction (phone optional + clearer success state) and add unique "recent work in {area}" blocks on the top 10 traffic areas.** Lifts form completion ~20% and de-risks thin-content classification on the rest of the 59.
+
+---
+
+*End of Marketing.Rules.2VP.Master. To update, raise a PR against `claude/london-landing-pages-bOcqW` (or current working branch) and tag the marketing owner.*
