@@ -48,3 +48,42 @@ each channel's character limit, and ask before spending credits or publishing.
 
 The skill needs the MCP server from step 2 to be connected — on its own it has
 no way to reach PostPost.
+
+## 4. Using PostPost from a Claude Code cloud session
+
+A cloud session reaches the internet through an allowlist, and `postpost.ai`
+is not on the default **Trusted** list — the gateway answers `403` to the
+CONNECT, so `mcp-remote` reports `CONNECTION_CLOSED`. Two settings on the
+cloud environment fix it.
+
+At [claude.ai/code](https://claude.ai/code), select the cloud icon showing the
+environment's name in the row above the message box (there is no settings page
+or direct URL), hover the environment and select the gear icon. In the dialog:
+
+**Network access** → **Custom**, and in **Allowed domains**, one per line:
+
+```text
+postpost.ai
+*.postpost.ai
+```
+
+Leave **Also include default list of common package managers** checked —
+`npx -y mcp-remote` needs the npm registry, and unchecking it allows only
+what is listed.
+
+**Environment variables** (`.env` format, one pair per line):
+
+```text
+POSTPOST_API_KEY=pp_your_key_here
+```
+
+Note that anyone using the environment can read these values. On Pro and Max
+plans an **API credential** is the safer alternative: the agent proxy attaches
+the key to requests for the hosts you list *after* they leave the session, so
+the key never reaches the model or the session's environment. Using one means
+dropping the `--header` argument and the `env` block from `.mcp.json`, since
+the proxy supplies the header instead.
+
+Both changes apply to **sessions started afterwards**. A session already
+running keeps the values and the allowlist it started with, so start a new
+cloud session before expecting `/mcp` to show `postpost` connected.
