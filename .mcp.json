@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "postpost": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://postpost.ai/api/mcp",
+        "--header",
+        "Authorization:${AUTH_HEADER}"
+      ],
+      "env": {
+        "AUTH_HEADER": "Bearer ${POSTPOST_API_KEY}"
+      }
+    }
+  }
+}
