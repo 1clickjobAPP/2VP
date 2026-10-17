@@ -1,0 +1,109 @@
+{
+ "_note": "Append these 8 entries to blog/_daily/posts.json ONLY after each URL returns 200 on 2vp.uk, then run build_blog_hub.py. basement-conversion-london-guide is already in posts.json.",
+ "posts": [
+  {
+   "slug": "cost-per-square-metre-london-renovation-2026",
+   "lane": "residential",
+   "cluster": "renovation",
+   "date": "2026-10-17",
+   "readtime": "11 min read",
+   "title": "Renovation Cost per m² in London 2026: Every Project Type",
+   "short": "Every project type per m², by tier and postcode",
+   "hook": "Renovation cost per m² in London runs from £2,180 to £6,506 NET on 2VP’s own rates, depending on project type, finish tier and postcode.",
+   "chip": "£2,180–£6,506/m² NET",
+   "tag": "Cost · Per m²",
+   "kw": "renovation cost per m2 square metre london extension loft refurbishment new build net build price inner outer london tier"
+  },
+  {
+   "slug": "full-victorian-terrace-renovation-cost-london",
+   "lane": "residential",
+   "cluster": "renovation",
+   "date": "2026-10-17",
+   "readtime": "12 min read",
+   "title": "Victorian Terrace Renovation Cost in London 2026",
+   "short": "90–130 m² terraces priced, plus the period extras",
+   "hook": "Victorian terrace renovation cost in London runs £196k–£450k NET for 90–130 m² on 2VP’s rates — before the period fabric adds its surprises.",
+   "chip": "£2,180–£3,463/m² NET",
+   "tag": "Cost · Victorian terrace",
+   "kw": "victorian terrace renovation cost london period property renovation london victorian house extension london full home renovation cost london 2026 lime mortar lath and plaster chimney breast removal sash windows outrigger side return contingency vat 5% empty two years"
+  },
+  {
+   "slug": "rear-extension-cost-london-2026",
+   "lane": "residential",
+   "cluster": "extension",
+   "date": "2026-10-17",
+   "readtime": "10 min read",
+   "title": "Rear Extension Cost in London 2026: Single-Storey, Line by Line",
+   "short": "Single-storey rear extension, stage by stage",
+   "hook": "Rear extension cost in London 2026 runs £3,557–£5,650 per m² NET on 2VP’s own rates, so a typical 25 m² Balanced build is £104,625.",
+   "chip": "£3,557–£5,650/m² NET",
+   "tag": "Cost · Extensions",
+   "kw": "rear extension cost london 2026 single storey extension per square metre party wall prior approval permitted development glazing foundations"
+  },
+  {
+   "slug": "what-is-a-jct-homeowner-contract",
+   "lane": "residential",
+   "cluster": "money",
+   "date": "2026-10-17",
+   "readtime": "11 min read",
+   "title": "What Is a JCT Homeowner Contract? A London Guide",
+   "short": "HO/B vs HO/C, and 10 clauses to check first",
+   "hook": "A JCT homeowner contract is a plain-English standard building contract for home projects that fixes price, programme, payments, changes and defects before work starts.",
+   "chip": "10 clauses to check",
+   "tag": "Guide &middot; Contracts",
+   "kw": "jct homeowner contract what is jct contract homeowner ho/b ho/c minor works intermediate design and build vs traditional contract fixed price renovation contract consumer rights act 2015 adjudication retention defects period variations payment schedule completion bond"
+  },
+  {
+   "slug": "structural-engineer-vs-architect-london",
+   "lane": "residential",
+   "cluster": "planning",
+   "date": "2026-10-17",
+   "readtime": "12 min read",
+   "title": "Structural Engineer vs Architect in London",
+   "short": "Who designs, who proves it stands up, who you need",
+   "hook": "Structural engineer vs architect in London: the architect decides what gets built and gets it consented; the engineer proves it will stand up.",
+   "chip": "Architect 7% · Engineer £1,500–£3,500 NET",
+   "tag": "Guide &middot; Professionals",
+   "kw": "structural engineer vs architect london structural engineer cost architect fees design and build arb architects act 1997 chartered structural engineer part a building regulations cdm 2015 party wall chimney breast removal load-bearing wall measured survey"
+  },
+  {
+   "slug": "loft-conversion-vs-extension-which",
+   "lane": "residential",
+   "cluster": "loft",
+   "date": "2026-10-17",
+   "readtime": "12 min read",
+   "title": "Loft Conversion vs Extension in London — which one to build",
+   "short": "A loft adds bedrooms, an extension adds living space",
+   "hook": "Loft conversion vs extension turns on the room you are missing: a loft adds bedrooms, an extension adds living space, then the house decides.",
+   "chip": "Loft £2,700/m² vs extension £4,185/m² NET",
+   "tag": "Guide &middot; Decisions",
+   "kw": "loft conversion vs extension which is better london does a loft conversion add value head height ridge to ceiling joist 2.2m approved document k headroom stair permitted development class a class b 40 cubic metres conservation area article 4 party wall cost per m2 rear extension dormer amott road"
+  },
+  {
+   "slug": "snagging-list-final-walkthrough-london",
+   "lane": "residential",
+   "cluster": "onsite",
+   "date": "2026-10-17",
+   "readtime": "11 min read",
+   "title": "Snagging List London: the Final Walkthrough",
+   "short": "The room-by-room checklist, and the paperwork",
+   "hook": "A snagging list in London is the room-by-room defects record you agree at the final walkthrough, with retention held until every item closes.",
+   "chip": "5% retention · 12-month defects period",
+   "tag": "Guide &middot; Handover",
+   "kw": "snagging list london final walkthrough checklist snagging uk practical completion defects liability period retention handover pack electrical installation certificate bs 7671 building control completion certificate gas safe consumer rights act 2015 repeat performance raking light"
+  },
+  {
+   "slug": "basement-waterproofing-bs-8102-london",
+   "lane": "residential",
+   "cluster": "extension",
+   "date": "2026-10-17",
+   "readtime": "11 min read",
+   "title": "Basement Waterproofing BS 8102: How to Check the Design",
+   "short": "Types A, B and C, Grades 1–3, and the pump",
+   "hook": "Basement waterproofing, BS 8102 says, is a designed system: choose the grade of dry, combine protection types to reach it, then maintain it for life.",
+   "chip": "Grade 3 for habitable · no rate published",
+   "tag": "Guide &middot; Basements",
+   "kw": "basement waterproofing bs 8102 2022 london tanking cavity drain membrane type a barrier type b structurally integral type c drained protection grade 1 grade 2 grade 3 habitable sump pump battery backup alarm groundwater water table insurance backed guarantee cssw property care association radon br 211 anti-flooding valve approved document c 4.12 5.6 cellar conversion"
+  }
+ ]
+}
