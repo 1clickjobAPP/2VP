@@ -13,7 +13,8 @@ Live status could not be re-checked today: 2vp.uk is not reachable from this clo
 | B. Written, not live (outside the registry) | 2 |
 | C. Batch 17 Oct 2026, ready, not deployed | 8 new + 1 fixed re-issue |
 | D. Required by the rules, not written yet | 4 |
-| **Total written** | **49** |
+| A2. Live but missing from the registry | 8 |
+| **Total written** | **57** |
 
 ---
 
@@ -96,6 +97,25 @@ Live status could not be re-checked today: 2vp.uk is not reachable from this clo
 | 39 | `office-acoustics-design-guide` | 2026-08-28 | Office Acoustics Design in London | — |
 
 **Why 5 are disputed:** `DEPLOY.md` (22 Aug) lists kitchen, bathroom, office fit-out cost and Cat A vs Cat B as "written locally, 404 online", yet they are in the registry. The 17 Oct batch notes say the basement guide was "never deployed", yet it is in the registry too. The registry's own note says "all 23 return 200" on 20 Aug, but it now holds 39 entries, so at least 16 were added without that check being repeated.
+
+---
+
+## A2. Live on 2vp.uk but missing from the registry (found 19 Oct in Search Console)
+
+These URLs got Google impressions in Jun–Aug 2026, so they are live, but `posts.json` doesn't list them. Add them so nobody writes duplicates.
+
+| Slug | Impressions (Jun–Aug) | Avg position |
+|---|---|---|
+| `dilapidations-london-office` | 223 | 15.1 |
+| `steel-beam-fire-protection-movement-propping` | 78 | 8.4 |
+| `client-dutyholder-building-regulations-london` | 17 | 15.9 |
+| `ikea-kitchen-hack-carcasses-what-we-found` | 14 | 18.4 |
+| `office-fit-out-without-demolition-london` | 9 | 19.7 |
+| `microcement-kitchen-worktop-over-existing` | 6 | 14.2 |
+| `rear-extension-builder-in-chelsea` | 5 | 26.2 |
+| `why-our-project-cap-works-rplxj` | 2 | 5.0 |
+
+Note: `loft-conversion-cost-london-2026` (registry #1) got **no** impressions, while the non-blog page `/loft-conversion-cost-london` got 1,753. Check that the blog URL is live and indexed.
 
 ---
 
