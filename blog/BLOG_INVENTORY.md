@@ -108,7 +108,7 @@ Live status could not be re-checked today: 2vp.uk is not reachable from this clo
 
 ## C. Batch 17 Oct 2026 — ready, not deployed
 
-On branch `claude/sleepy-wozniak-om66nr`, folder `blog/`. Audit results in `BLOG_AUDIT_2026-10-19.md`.
+In `blog/` on this branch (merged from `claude/sleepy-wozniak-om66nr`, footers fixed 19 Oct). Audit results in `BLOG_AUDIT_2026-10-19.md`.
 
 | # | Slug | Rule | Type | £ in body |
 |---|---|---|---|---|

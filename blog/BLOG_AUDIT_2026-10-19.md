@@ -37,11 +37,11 @@ The master (17 Oct, §3) says "No £ figures in social posts, blog bodies, GMB p
 
 Recommendation: **A**. Searchers for "rear extension cost London" expect numbers; a cost guide without them will lose to Beams and The Page.
 
-### 2. "Fixed-price" in the footer strapline (all 9 posts)
+### 2. ✅ FIXED 19 Oct — "Fixed-price" in the footer strapline (all 9 posts)
 
 Every post's footer reads "Built by 2VP — fixed-price design & build across London." The phrase was retired on 22 May 2026. The same template is likely on the live posts too.
 
-Fix (one line per file): "Built by 2VP — open-book design & build across London."
+Fixed in this branch: all 9 footers now read "Built by 2VP — open-book design & build across London." The live posts still need the same change in the site template.
 
 The JCT post's use of "fixed price renovation contract" as a general term (keyword, FAQ) explains what the contract type is and does not promise anything. It can stay.
 
@@ -65,7 +65,7 @@ The JCT post's use of "fixed price renovation contract" as a general term (keywo
 ## What to do next, in order
 
 1. Vladimir decides the £ question (option A or B).
-2. Replace "fixed-price" in the footer template (batch + live).
+2. ~~Replace "fixed-price" in the footer~~ done for the batch; still to do in the live site template.
 3. Fix the LinkedIn link.
 4. Solve the deploy route (SSH key or repo), then ship `loft-conversion-planning-permission-london` first, then the batch.
 5. `curl` all 39 registry URLs and correct `posts.json`.
