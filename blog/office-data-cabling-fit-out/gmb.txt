@@ -1,0 +1,12 @@
+Office data cabling for a fit-out means Cat6A to desks and access points, a cooled comms room and landlord-approved riser routes, all agreed before the ceilings close.
+
+Once the ceiling grid and raised floor are closed, every cabling change becomes a variation. So plan it at design stage:
+- Count outlets from the furniture layout, not the headcount: desks, screens, printers, Wi-Fi access points, door readers and cameras.
+- Put the comms room near the middle of the floor, so the longest copper run stays inside the 90-metre permanent link limit.
+- Get riser routes and fire-stopping approved in your licence to alter.
+- Order any dedicated fibre line as soon as the lease is agreed.
+- Ask for the test results for every link and the labelling schedule at handover.
+
+On a 2VP fit-out, cabling is priced as its own lines in an Open-Book Itemised Quote, with One Named PM, Start to Finish coordinating your IT lead and the landlord.
+
+Read the guide: https://2vp.uk/blog/office-data-cabling-fit-out/
