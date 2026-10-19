@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- ══════════════════════════════════════════════════════════════════
+     KEYWORD BLOCK (rule 1) — audit trail. Source: NOVEMBER_2026_PLAN.md row Thu 26 Nov (Top 100 family: office fit-out, technical)
+     ──────────────────────────────────────────────────────────────
+     Primary       :  office data cabling
+     Secondary (3) :  office network cabling London · Cat6A cabling office fit-out · structured cabling office
+     LSI (8)       :  comms room · patch panel · Wi-Fi access points · landlord riser · wayleave · Power over Ethernet · fibre backbone · permanent link test
+     PAA (6)       :  Is Cat6A worth it for an office? · How many data points does an office need? · Do I need a comms room? · Who owns the data cabling at the end of a lease? · Can existing office cabling be reused? · How long does office data cabling take?
+     URL slug      :  office-data-cabling-fit-out
+     Page tier     :  3 (how-to / fit-out technical)
+     Page intent   :  informational / commercial investigation
+     Geo modifiers :  London
+     Schema        :  Article · Organization · BreadcrumbList · FAQPage (no HowTo: not a step-by-step procedure)
+     Last extracted:  2026-10-19
+     ══════════════════════════════════════════════════════════════════
+     MONEY RULE: no £ anywhere on this page (master rules §3, 17 Oct 2026).
+     Cost is written as what drives it, and "ask for X in writing".
+     REGULATION RULE: documents cited without clause numbers unless certain.
+     HERO: no 2VP office fit-out photo exists. Hero uses a real 2VP residential
+     photo (Alexandra, N22) and says so in the alt text and caption.
+     ══════════════════════════════════════════════════════════════════
+     FACT CHECK (Vladimir to verify before publishing):
+      1. Cat6A / Class EA supports 10GBASE-T over a channel of up to 100 m
+         (90 m permanent link + patch cords) — ISO/IEC 11801-1 / BS EN 50173-1.
+      2. Cat6 supports 10GBASE-T only over shorter runs (commonly quoted ~55 m,
+         depending on alien crosstalk) — stated here without a number.
+      3. BS EN 50173-1 (design), BS EN 50174-1/-2 (planning, installation,
+         separation from power) and BS 6701 (UK installation of telecoms
+         cabling) are the right standards to cite, and current editions.
+      4. BS 6701 (2016+A1:2017) recommends a minimum CPR cable class of
+         Cca-s1b,d2,a2 for cables installed in buildings — page names CPR
+         Euroclass and LSZH generally; confirm before adding the class.
+      5. BS 7671 requirement that wiring systems are supported against
+         premature collapse in a fire (Reg 521.10.202 in the 18th Edition) and
+         that BS 6701 applies the same principle to telecoms cables. Page gives
+         no regulation number.
+      6. IEEE 802.3bt (Type 4) Power over Ethernet delivers up to ~90 W at the
+         switch; heat in large bundles is why higher PoE favours Cat6A.
+         Page gives no wattage.
+      7. Many cabling manufacturers offer an extended system warranty (often
+         quoted as 25 years) when installed and tested by an accredited
+         installer — page says "extended system warranty" with no number.
+      8. Leased-line (dedicated fibre) lead times "run to months, not weeks"
+         in London multi-let buildings — general industry experience, confirm.
+      9. How 2VP procures the cabling package (specialist subcontractor under
+         2VP's PM) — page says "the cabling installer" and does not claim
+         2VP cables in-house. Confirm wording.
+     10. 2VP's 12-Month Workmanship Warranty and 5% retention terms apply
+         to commercial fit-out contracts as on residential (CTA band).
+     11. ../commercial/ hub URL returns 200 (audit 19 Oct flags it unconfirmed).
+         No dedicated office fit-out service page exists; body links the
+         commercial hub and the estimator.
+     12. image_todo: replace hero/og image with a real 2VP office fit-out photo.
+     ══════════════════════════════════════════════════════════════════ -->
+
+<title>Office Data Cabling for a Fit-Out | 2VP Guide</title>
+<meta name="description" content="Plan office data cabling for a London fit-out: Cat6A, comms room, Wi-Fi and landlord risers. Get your itemised estimate in 2 minutes." />
+
+<meta name="author" content="Vladimir Castravet" />
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
+<link rel="canonical" href="https://2vp.uk/blog/office-data-cabling-fit-out/" />
+<link rel="alternate" hreflang="en-gb" href="https://2vp.uk/blog/office-data-cabling-fit-out/" />
+
+<meta name="geo.region" content="GB-LND" />
+<meta name="geo.placename" content="London" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="2VP &mdash; Fix &amp; Clear" />
+<meta property="og:title" content="Office Data Cabling for a Fit-Out &mdash; Cat6A, comms room, Wi-Fi" />
+<meta property="og:description" content="What to specify, where the comms room goes, how to plan Wi-Fi, what your landlord controls, and what drives the cost of office data cabling." />
+<meta property="og:url" content="https://2vp.uk/blog/office-data-cabling-fit-out/" />
+<meta property="og:image" content="https://2vp.uk/images/projects/alexandra-living-wide.jpg" />
+<meta property="og:image:width" content="1800" />
+<meta property="og:image:height" content="1200" />
+<meta property="og:locale" content="en_GB" />
+<meta property="article:author" content="Vladimir Castravet" />
+<meta property="article:published_time" content="2026-11-26T09:00:00+00:00" />
+<meta property="article:modified_time" content="2026-11-26T09:00:00+00:00" />
+<meta property="article:section" content="Guide" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@2vprojects" />
+<meta name="twitter:title" content="Office Data Cabling for a Fit-Out &mdash; Cat6A, comms room, Wi-Fi" />
+<meta name="twitter:description" content="What to specify, where the comms room goes, how to plan Wi-Fi, what your landlord controls, and what drives the cost of office data cabling." />
+<meta name="twitter:image" content="https://2vp.uk/images/projects/alexandra-living-wide.jpg" />
+
+<link rel="icon" type="image/svg+xml" href="/assets/icon.svg" />
+<link rel="apple-touch-icon" href="/assets/icon.svg" />
+<meta name="theme-color" content="#3A4B29" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ═══════ JSON-LD · Article + Organization + BreadcrumbList + FAQPage (rule F) ═══════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://2vp.uk/blog/office-data-cabling-fit-out/#article",
+      "url": "https://2vp.uk/blog/office-data-cabling-fit-out/",
+      "headline": "Office Data Cabling for a Fit-Out — A London Planning Guide",
+      "description": "Plan office data cabling for a London fit-out: Cat6A, comms room, Wi-Fi and landlord risers. Get your itemised estimate in 2 minutes.",
+      "image": "https://2vp.uk/images/projects/alexandra-living-wide.jpg",
+      "datePublished": "2026-11-26T09:00:00+00:00",
+      "dateModified": "2026-11-26T09:00:00+00:00",
+      "wordCount": 2377,
+      "inLanguage": "en-GB",
+      "author": {
+        "@type": "Person",
+        "name": "Vladimir Castravet",
+        "url": "https://2vp.uk/about/vladimir/"
+      },
+      "publisher": {
+        "@id": "https://2vp.uk/#organization"
+      },
+      "mainEntityOfPage": "https://2vp.uk/blog/office-data-cabling-fit-out/",
+      "articleSection": "Guide",
+      "keywords": "office data cabling, office network cabling London, Cat6A cabling office fit-out, structured cabling office",
+      "citation": [
+        "BS EN 50173-1 Information technology. Generic cabling systems",
+        "BS EN 50174 Information technology. Cabling installation",
+        "BS 6701 Telecommunications equipment and telecommunications cabling",
+        "BS 7671 Requirements for Electrical Installations (IET Wiring Regulations)",
+        "Building Regulations 2010, Approved Document B (Fire safety)",
+        "Regulatory Reform (Fire Safety) Order 2005"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://2vp.uk/#organization",
+      "name": "2V Projects Ltd",
+      "alternateName": "2VP",
+      "url": "https://2vp.uk/",
+      "logo": "https://2vp.uk/images/brand/2vp-logo-2025.png",
+      "telephone": "+44-20-8050-8968",
+      "email": "hi@2vp.uk",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "20 Dawes Road",
+        "addressLocality": "London",
+        "addressRegion": "London",
+        "postalCode": "SW6 7EN",
+        "addressCountry": "GB"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://2vp.uk/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Insights",
+          "item": "https://2vp.uk/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Office Data Cabling for a Fit-Out — A London Planning Guide",
+          "item": "https://2vp.uk/blog/office-data-cabling-fit-out/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Cat6A worth it for an office?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For most new fit-outs, yes. Cat6A carries 10 Gb/s over the full 100-metre channel and handles the heat from higher-power Power over Ethernet better than Cat6. It is thicker and needs more containment space, so on a short lease in a Wi-Fi-first office Cat6 may be enough. Make it your IT lead's written decision."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many data points does an office need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no legal number. Count from the furniture layout: every desk position, meeting-room table and screen, printer, Wi-Fi access point, door access reader and camera. Then ask for spare ports on the patch panel and spare room in the containment, so a later layout change does not mean opening the ceiling."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a comms room?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A small floor may manage with a cabinet in a ventilated cupboard. A larger floor needs a room with dedicated power, cooling sized to the equipment, a lockable door and no water pipes overhead. Place it centrally so the longest copper run stays inside the 90-metre permanent link limit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who owns the data cabling at the end of a lease?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Check your lease. Many leases require tenants to remove their alterations, including redundant cabling, at the end of the term, and the cost forms part of the dilapidations settlement. Agree in the licence to alter what may stay, and keep the as-built drawings and labelling schedule."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can existing office cabling be reused?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sometimes. Have it tested first. If it passes to the category you need and the outlets suit your new layout, reuse can be a real saving on a refurbishment. If it fails, or the layout has moved, fault-finding usually costs more than new cable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does office data cabling take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It runs in two stages inside the fit-out programme: first fix (containment and cable pulling) while ceiling and floor voids are open, and second fix (termination and testing) near the end. Ask for both as named lines in the programme, and order any dedicated fibre line as soon as the lease is agreed."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --white:#FFFFFF; --paper:#FAF8F4; --black:#1B1C1A; --ink:#2C2D2A;
+  --ink-soft:#5C5D58; --rule:#E7E3DA; --olive:#3A4B29; --olive-deep:#2F3D21;
+  --gold:#C6A664;
+  --display:'League Spartan',ui-sans-serif,system-ui,sans-serif;
+  --body:'Inter',-apple-system,system-ui,sans-serif;
+  --pad:clamp(20px,5vw,72px); --max:1280px; --max-prose:720px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--olive);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;transition:color .2s ease}
+a:hover{color:var(--olive-deep)}
+h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-0.02em;color:var(--black);line-height:1.15;margin:0 0 0.5em}
+.eye{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--olive);display:inline-flex;align-items:center;gap:14px;margin-bottom:18px}
+.eye::before{content:'';width:28px;height:1px;background:var(--olive)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+
+nav.top{position:fixed;top:0;left:0;right:0;background:rgba(250,248,244,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);z-index:60}
+nav.top .inner{max-width:var(--max);margin:0 auto;padding:14px var(--pad);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand-mark{height:46px;width:auto}
+.nav-links{display:flex;gap:28px;list-style:none;padding:0;margin:0}
+.nav-links a{font-family:var(--body);font-size:13px;font-weight:500;letter-spacing:.02em;color:var(--ink);text-decoration:none;padding:8px 0;border-bottom:1.5px solid transparent}
+.nav-links a:hover,.nav-links a.is-active{color:var(--olive);border-bottom-color:var(--olive)}
+.nav-right{display:flex;align-items:center;gap:18px}
+.nav-tel{font-family:var(--body);font-size:13px;color:var(--ink-soft);text-decoration:none}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--body);font-size:14px;font-weight:500;padding:12px 20px;border-radius:2px;text-decoration:none;transition:all .25s ease;cursor:pointer;border:1px solid transparent}
+.btn-cta{background:var(--olive);color:var(--white);border-color:var(--olive)}
+.btn-cta:hover{background:var(--olive-deep);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--white)}
+.btn .arr{transition:transform .25s ease}.btn:hover .arr{transform:translateX(3px)}
+.nav-burger{display:none;width:40px;height:40px;background:transparent;border:0;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px}
+.nav-burger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:transform .3s ease,opacity .2s ease}
+.nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+@media(max-width:880px){.nav-links,.nav-right{display:none}.nav-burger{display:flex}nav.top.mob-open{height:auto;background:var(--paper)}nav.top.mob-open .nav-links,nav.top.mob-open .nav-right{display:flex;flex-direction:column;align-items:stretch;width:100%;gap:0;padding:18px var(--pad)}nav.top.mob-open .inner{flex-direction:column;align-items:stretch;padding:14px var(--pad) 0}nav.top.mob-open .nav-links a{padding:14px 0;border-bottom:1px solid var(--rule);font-size:15px}}
+
+.art-head{padding:120px 0 0}
+.art-head .wrap{max-width:920px}
+.crumbs{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:28px}
+.crumbs a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s ease}
+.crumbs a:hover{border-bottom-color:var(--olive);color:var(--olive)}
+.crumbs span{color:var(--ink-soft);margin:0 10px}
+.crumbs .here{color:var(--black);font-weight:600}
+.art-tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);margin-bottom:18px;padding:6px 12px;background:rgba(58,75,41,.08);border-radius:2px}
+.art-head h1{font-family:var(--display);font-size:clamp(34px,4.6vw,54px);font-weight:300;letter-spacing:-0.02em;line-height:1.06;color:var(--black);margin:0 0 22px;max-width:880px}
+.art-hook{font-size:20px;line-height:1.55;color:var(--ink);max-width:780px;margin:0 0 28px;font-weight:400}
+.art-hook strong{color:var(--black);font-weight:600}
+.art-meta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-soft);letter-spacing:.04em;text-transform:uppercase;padding-top:24px;border-top:1px solid var(--rule)}
+.art-meta strong{color:var(--black);font-weight:600;text-transform:none;letter-spacing:0}
+.art-meta .dot{width:3px;height:3px;background:var(--ink-soft);border-radius:50%;display:inline-block}
+
+.art-hero{margin:48px 0 64px}
+.art-hero .wrap{max-width:1080px}
+.art-hero .img{aspect-ratio:16/9;background-size:cover;background-position:center;background-color:var(--rule);box-shadow:0 24px 56px rgba(0,0,0,.16)}
+.art-hero .cap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding:18px 0 0;font-size:12px;color:var(--ink-soft);letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid var(--rule);padding-bottom:18px}
+.art-hero .cap strong{color:var(--black);font-weight:600;text-transform:none;letter-spacing:0}
+
+.art-body{padding:0 0 80px}
+.art-body .wrap{max-width:var(--max-prose);font-size:17px;line-height:1.75}
+.art-body .wrap.with-toc{max-width:1080px;display:grid;grid-template-columns:1fr 240px;gap:64px;align-items:flex-start}
+.art-prose{max-width:720px}
+.art-prose p{margin:0 0 22px;color:var(--ink);font-size:17px;line-height:1.75}
+.art-prose p.lede{font-size:19px;color:var(--ink);font-weight:400;line-height:1.65;margin-bottom:32px}
+.art-prose h2{font-family:var(--display);font-size:30px;font-weight:500;letter-spacing:-0.018em;color:var(--black);margin:56px 0 18px;line-height:1.18;padding-top:8px}
+.art-prose h2:first-child{margin-top:0}
+.art-prose h3{font-family:var(--display);font-size:21px;font-weight:600;color:var(--black);margin:36px 0 12px;line-height:1.28}
+.art-prose ul,.art-prose ol{margin:0 0 24px;padding-left:22px;color:var(--ink)}
+.art-prose li{margin-bottom:10px;line-height:1.7}
+.art-prose strong{color:var(--black);font-weight:600}
+.art-prose blockquote{margin:32px 0;padding:22px 28px;background:var(--white);border-left:3px solid var(--olive);font-size:17px;line-height:1.65;color:var(--ink);font-style:normal}
+.art-prose blockquote strong{color:var(--olive);text-transform:uppercase;letter-spacing:.1em;font-size:11px;display:block;margin-bottom:6px;font-weight:700}
+.art-prose p.note{font-size:13.5px;color:var(--ink-soft);line-height:1.6;border-left:2px solid var(--rule);padding-left:14px}
+
+.tbl-scroll{overflow-x:auto;margin:28px 0 32px;-webkit-overflow-scrolling:touch}
+.cost-table{width:100%;min-width:520px;border-collapse:collapse;font-size:14.5px}
+.cost-table caption{text-align:left;font-family:var(--display);font-size:13px;font-weight:600;color:var(--olive);text-transform:uppercase;letter-spacing:.16em;padding-bottom:12px;caption-side:top}
+.cost-table th,.cost-table td{padding:13px 14px;text-align:left;border-bottom:1px solid var(--rule);vertical-align:top}
+.cost-table th{font-family:var(--display);font-size:12.5px;font-weight:600;color:var(--black);text-transform:uppercase;letter-spacing:.08em;background:var(--white);border-bottom:2px solid var(--olive)}
+.cost-table tbody tr:hover{background:var(--white)}
+.cost-table .num{text-align:right;font-variant-numeric:tabular-nums;font-weight:500;color:var(--black);white-space:nowrap}
+.cost-table td.src{font-size:12.5px;color:var(--ink-soft)}
+.cost-table tfoot td{font-weight:600;color:var(--black);background:var(--paper);border-top:2px solid var(--olive);border-bottom:0}
+.cost-table tbody tr.sub td{background:rgba(58,75,41,.05);font-weight:600}
+
+.opts{margin:26px 0 30px;display:grid;gap:14px}
+.opt{background:var(--white);border:1px solid var(--rule);border-left:3px solid var(--gold);padding:18px 20px;font-size:15.5px;line-height:1.62}
+.opt b{color:var(--black);display:block;margin-bottom:6px;font-family:var(--display);font-weight:600;font-size:16px}
+
+ol.checklist{counter-reset:ck;list-style:none;padding:0;margin:26px 0 30px}
+ol.checklist li{counter-increment:ck;position:relative;padding:0 0 16px 42px;margin:0 0 16px;border-bottom:1px solid var(--rule);font-size:15.5px;line-height:1.65}
+ol.checklist li:last-child{border-bottom:0}
+ol.checklist li::before{content:counter(ck,decimal-leading-zero);position:absolute;left:0;top:0;font-family:var(--display);font-size:13px;font-weight:700;color:var(--olive);letter-spacing:.04em}
+
+.inline-cta{margin:48px 0;padding:32px;background:var(--white);border:1px solid var(--rule);border-left:4px solid var(--olive);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.inline-cta-text{flex:1;min-width:240px}
+.inline-cta-text .eye{margin:0 0 6px;font-size:10px}
+.inline-cta-text strong{font-family:var(--display);font-size:20px;font-weight:500;color:var(--black);letter-spacing:-0.01em;display:block;line-height:1.25;margin-bottom:6px}
+.inline-cta-text p{font-size:14.5px;color:var(--ink-soft);margin:0;line-height:1.55}
+
+.toc{position:sticky;top:100px;font-size:13px;line-height:1.55;padding:22px 24px;background:var(--white);border:1px solid var(--rule)}
+.toc-h{font-family:var(--display);font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);margin:0 0 14px}
+.toc ol{list-style:none;padding:0;margin:0;counter-reset:toc}
+.toc li{counter-increment:toc;margin-bottom:10px;padding-left:28px;position:relative}
+.toc li::before{content:counter(toc,decimal-leading-zero);position:absolute;left:0;font-variant-numeric:tabular-nums;font-size:11px;font-weight:600;color:var(--olive);letter-spacing:.04em;top:2px}
+.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid transparent;transition:color .2s ease,border-color .2s ease}
+.toc a:hover{color:var(--olive);border-bottom-color:var(--olive)}
+@media(max-width:980px){.art-body .wrap.with-toc{grid-template-columns:1fr;gap:24px}.toc{position:static;margin-bottom:32px}}
+
+.art-faq{padding:64px 0;background:var(--white);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.art-faq .wrap{max-width:920px}
+.art-faq h2{font-family:var(--display);font-size:32px;font-weight:300;letter-spacing:-0.018em;color:var(--black);margin:0 0 32px}
+.art-faq h2 em{color:var(--olive);font-style:italic}
+.faq-row{border-top:1px solid var(--rule);padding:22px 0}
+.faq-row:last-child{border-bottom:1px solid var(--rule)}
+.faq-row h3{font-family:var(--display);font-size:19px;font-weight:500;letter-spacing:-0.012em;color:var(--black);margin:0 0 10px;line-height:1.25}
+.faq-row p{font-size:15.5px;color:var(--ink);line-height:1.65;margin:0;max-width:760px}
+.faq-row p strong{color:var(--black);font-weight:600}
+
+.cta-band{background:var(--black);color:var(--white);padding:clamp(56px,7vw,88px) 0;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;inset:0;background-image:url('../../images/projects/moncrieff-loft/moncrieff-loft-07.jpg');background-size:cover;background-position:center;opacity:.16}
+.cta-grid{position:relative;display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.cta-band h2{font-family:var(--display);font-size:clamp(28px,3.6vw,44px);font-weight:300;letter-spacing:-0.02em;color:var(--white);margin:0 0 18px;line-height:1.08}
+.cta-band h2 em{color:var(--gold);font-style:italic;font-weight:300}
+.cta-band p{font-size:16px;color:rgba(255,255,255,.78);max-width:540px;margin:0 0 24px;line-height:1.6}
+.cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+.cta-actions .btn-ghost{color:var(--white);border-color:rgba(255,255,255,.45)}
+.cta-actions .btn-ghost:hover{background:var(--white);color:var(--black)}
+.cta-actions .btn-cta{background:var(--gold);color:var(--black);border-color:var(--gold)}
+.cta-side{display:flex;flex-direction:column;gap:12px}
+.cta-fact{padding:16px 20px;background:rgba(255,255,255,.06);border-left:2px solid var(--gold);font-size:14px;line-height:1.55;color:rgba(255,255,255,.92)}
+.cta-fact strong{color:var(--white)}
+@media(max-width:880px){.cta-grid{grid-template-columns:1fr}}
+
+.related{padding:72px 0}
+.related h2{font-family:var(--display);font-size:28px;font-weight:300;letter-spacing:-0.018em;color:var(--black);margin:0 0 32px}
+.related h2 em{color:var(--olive);font-style:italic}
+.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rel-card{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--rule);text-decoration:none;color:var(--ink);transition:all .25s ease;overflow:hidden}
+.rel-card:hover{transform:translateY(-2px);box-shadow:0 18px 36px rgba(0,0,0,.1);border-color:transparent}
+.rel-img{aspect-ratio:16/11;background-size:cover;background-position:center;background-color:var(--rule)}
+.rel-body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px}
+.rel-tag{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--olive)}
+.rel-card h3{font-family:var(--display);font-size:18px;font-weight:500;letter-spacing:-0.012em;line-height:1.24;color:var(--black);margin:0}
+.rel-card p{font-size:13.5px;color:var(--ink-soft);line-height:1.5;margin:0}
+.rel-foot{margin-top:auto;padding-top:14px;border-top:1px solid var(--rule);font-size:11px;color:var(--olive);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+@media(max-width:980px){.related-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.related-grid{grid-template-columns:1fr}}
+
+footer{background:var(--black);color:#A8A9A4;padding:80px 0 36px}
+.foot-grid{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:48px;margin-bottom:48px}
+.foot-brand img{height:54px;width:auto;margin-bottom:18px;filter:brightness(0) invert(1)}
+.foot-bio{font-size:13px;line-height:1.65;color:#A8A9A4;margin:0 0 18px;max-width:300px}
+.foot-contact{font-size:13px;line-height:1.7;color:#A8A9A4;margin:0}
+.foot-contact a{color:#A8A9A4;text-decoration:none;border-bottom:1px solid rgba(168,169,164,.3)}
+.foot-contact a:hover{color:var(--gold);border-color:var(--gold)}
+.foot-h{font-family:var(--display);font-size:14px;font-weight:600;color:var(--white);letter-spacing:-0.005em;margin:0 0 16px}
+footer a{display:block;font-size:13px;color:#A8A9A4;text-decoration:none;margin-bottom:10px;line-height:1.45}
+footer a:hover{color:var(--white)}
+.foot-legal{padding-top:36px;border-top:1px solid rgba(168,169,164,.18);font-size:12px;color:#75766F;line-height:1.65}
+.foot-legal-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;margin-top:20px}
+.foot-legal-row a{color:#75766F;display:inline;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+@media(max-width:980px){.foot-grid{grid-template-columns:1fr 1fr;gap:36px}}
+@media(max-width:600px){.foot-grid{grid-template-columns:1fr}}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<nav class="top" id="topNav" aria-label="Main navigation">
+  <div class="inner">
+    <a class="brand" href="../../Main.V2.HTML" aria-label="2VP — Design &amp; Build London">
+      <img class="brand-mark" src="../../images/brand/2vp-logo-2025.png" alt="2VP — Design &amp; Build London" />
+    </a>
+    <button class="nav-burger" id="navBurger" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="../../Main.V2.HTML">Home</a></li>
+      <li><a href="../../2VP.Loft.HTML">Loft conversions</a></li>
+      <li><a href="../../2VP.Extension.html">Extensions</a></li>
+      <li><a href="../../Portfolio.V2.html">Projects</a></li>
+      <li><a href="../../2vp.BespokeJoinery.HTML">Bespoke joinery</a></li>
+      <li><a href="../../2VP.Blog.V2.Blocks.html" class="is-active">Insights</a></li>
+      <li><a href="../../Main.V2.HTML#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="nav-tel" href="tel:+442080508968">020 8050 8968</a>
+      <a class="btn btn-cta" href="../../2VP.Calculator.LandingPage.html">Try the estimator <span class="arr">&rarr;</span></a>
+    </div>
+  </div>
+</nav>
+
+<header class="art-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="../../Main.V2.HTML">Home</a><span>/</span>
+      <a href="../../2VP.Blog.V2.Blocks.html">Insights</a><span>/</span>
+      <a href="../commercial/">Office fit-out</a><span>/</span>
+      <span class="here">Data cabling</span>
+    </nav>
+    <span class="art-tag">Guide &middot; Fit-out technical</span>
+    <h1>Office Data Cabling for a Fit-Out &mdash; A London Planning Guide</h1>
+    <p class="art-hook">Office data cabling for a fit-out means Cat6A to desks and access points, a cooled comms room and landlord-approved riser routes, agreed before ceilings close.</p>
+    <div class="art-meta">
+      <span><strong>By Vladimir Castravet</strong></span><span class="dot"></span>
+      <span>26 November 2026</span><span class="dot"></span>
+      <span>10 min read</span><span class="dot"></span>
+      <span>Updated November 2026</span>
+    </div>
+  </div>
+</header>
+
+<section class="art-hero">
+  <div class="wrap">
+    <div class="img" role="img" aria-label="Office data cabling guide &mdash; placeholder image: the finished living space of 2VP&rsquo;s completed Alexandra whole-house renovation, N22, a residential project, not an office" style="background-image:url('../../images/projects/alexandra-living-wide.jpg')"></div>
+    <div class="cap">
+      <span><strong>Alexandra</strong> &middot; N22 &middot; residential reference photo</span>
+      <span><strong>Office fit-out photo</strong> &middot; to follow</span>
+    </div>
+  </div>
+</section>
+
+<section class="art-body">
+  <div class="wrap with-toc">
+    <article class="art-prose">
+
+      <!-- ⟨⟨⟨ ARTICLE BODY START ⟩⟩⟩ -->
+      <p class="lede"><strong>Office data cabling</strong> is the fixed network inside your fit-out: copper cable from a patch panel to every desk, access point, screen and door reader, and fibre linking your comms room to the building&rsquo;s incoming lines. You live with it for the length of the lease, because once ceilings and raised floors are closed every change becomes a variation. This guide sets out what to specify, where the comms room should go, how to plan Wi-Fi, what your landlord controls, and what drives the cost. 2VP fits out offices and prices cabling packages, so it has an interest in this. Weigh what follows knowing that.</p>
+
+      <h2 id="s1">In 60 seconds &mdash; the short answer</h2>
+
+      <ul>
+        <li><strong>Specify Cat6A for new horizontal cabling.</strong> It carries 10 Gb/s Ethernet over the full standard channel length and copes better with the heat that higher-power Power over Ethernet puts into cable bundles.</li>
+        <li><strong>Count outlets from the layout, not the headcount.</strong> Desks, meeting-room screens, printers, Wi-Fi access points, door access readers, cameras and AV all need a cable.</li>
+        <li><strong>Put the comms room where runs stay short.</strong> A copper permanent link is designed to a maximum of 90 metres, and that sets the radius the comms room can serve.</li>
+        <li><strong>Plan Wi-Fi with a survey, not a guess.</strong> Each ceiling-mounted access point needs its own data drop, positioned before the ceiling grid is set out.</li>
+        <li><strong>Your landlord controls the risers, the entry point and the fire-stopping.</strong> Get the routes approved in the licence to alter, not after.</li>
+        <li><strong>Ask for the test results and the labelling schedule at handover.</strong> Every link tested, every outlet numbered to match the patch panel.</li>
+      </ul>
+
+      <h2 id="s2">What office data cabling actually means</h2>
+
+      <p>Office data cabling is one layer of what the industry calls structured cabling: a planned, standardised system rather than cables pulled in one at a time as needs arise. In the UK it is designed to BS EN 50173-1, planned and installed to BS EN 50174, and installed in buildings to BS 6701.</p>
+
+      <h3>What is structured cabling?</h3>
+
+      <p>It has four parts. A <strong>backbone</strong>, usually fibre, from the building&rsquo;s entry point or riser to your comms room. A <strong>comms room or cabinet</strong> holding patch panels, switches and the router. <strong>Horizontal cabling</strong>, the copper runs from the patch panel to each outlet. And the <strong>outlets</strong> themselves: floor boxes, desk modules, wall plates and ceiling points for access points and cameras. Every run is terminated, tested and labelled at both ends, so your IT lead can trace any fault in minutes.</p>
+
+      <div class="tbl-scroll">
+      <table class="cost-table">
+        <caption>The layers of an office network &mdash; what each one does</caption>
+        <thead><tr><th>Layer</th><th>What it is</th><th>What to agree in writing</th></tr></thead>
+        <tbody>
+          <tr><td>Backbone</td><td>Fibre from the building entry or landlord&rsquo;s riser to your comms room, and between floors if you take more than one</td><td>Fibre type, core count, route through the landlord&rsquo;s riser</td></tr>
+          <tr><td>Comms room / cabinet</td><td>Patch panels, switches, router, UPS, cooling</td><td>Location, power circuits, cooling, access control</td></tr>
+          <tr><td>Horizontal cabling</td><td>Copper from patch panel to each outlet</td><td>Category (Cat6A or Cat6), shielded or unshielded, fire performance class, outlet count</td></tr>
+          <tr><td>Outlets</td><td>Floor boxes, desk modules, wall plates, ceiling points</td><td>Positions on the layout drawing, numbering scheme</td></tr>
+          <tr><td>Wi-Fi</td><td>Ceiling-mounted access points powered over the data cable</td><td>Survey or predictive model, access-point positions</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3>Is Cat6A worth it for an office?</h3>
+
+      <p>For most new fit-outs, yes. Cat6A is specified to carry 10 Gb/s over a full 100-metre channel; Cat6 only reaches that speed over shorter runs. The bigger reason is Power over Ethernet. Access points, cameras, door readers and desk phones now take their power down the data cable, and at higher power levels large bundles of cable warm up. Cat6A&rsquo;s heavier construction handles that heat better. Cabling also outlives the equipment plugged into it: you may change switches and access points two or three times in one lease.</p>
+
+      <p>The counter-case is real. On a short lease in a Wi-Fi-first office with few fixed desks, Cat6 may do everything your IT lead needs. Cat6A is thicker and stiffer, so it needs more containment space and bigger bend radii. Make it your IT lead&rsquo;s decision, written into the specification, not a default nobody chose.</p>
+
+      <h3>Copper, fibre or Wi-Fi?</h3>
+
+      <p>All three, doing different jobs. Fibre carries the backbone, where distance and bandwidth matter. Copper carries the last run to each device, because it carries power as well as data. Wi-Fi serves laptops and phones, but every access point is itself a wired device, so a Wi-Fi-first office still needs a cabling plan.</p>
+
+      <h2 id="s3">When you need to plan it in a London fit-out</h2>
+
+      <p>Plan cabling at design stage, before the mechanical and electrical design is frozen. In a ceiling void, the cable tray competes with ductwork, sprinkler pipes, lighting and fan coil units; in a raised floor, it competes with power and floor boxes. A cable route drawn late is a cable route squeezed into whatever space is left.</p>
+
+      <h3>How many data points does an office need?</h3>
+
+      <p>There is no legal number. Build the count from the furniture layout: each desk position, each meeting-room table and screen, each printer, each Wi-Fi access point, each door access reader and camera, and any AV or room-booking panels. Then ask for spare ports on the patch panel and spare capacity in the containment, so a later reshuffle does not mean opening the ceiling.</p>
+
+      <h3>Do I need a comms room?</h3>
+
+      <p>A small floor may need only a wall or floor-standing cabinet in a ventilated cupboard. A larger one needs a room. Either way, it needs dedicated power circuits, cooling sized to the heat the equipment gives off, a lockable door, no water pipes running overhead and space to work at the back of the cabinet. Put it near the middle of the floor plate, so the longest run to the furthest desk stays inside the 90-metre permanent link limit.</p>
+
+      <h3>What does the landlord control?</h3>
+
+      <p>In a multi-let London building, your landlord usually controls the shared risers, the building&rsquo;s entry point for fibre, any roof space for antennas, and the fire-stopping wherever your cables pass through a compartment wall or floor. The riser may already be congested with previous tenants&rsquo; abandoned cable. Get your routes, fixings and fire-stopping method approved as part of your <a href="../office-fit-out-landlord-licence-to-alter/">licence to alter for an office fit-out</a>. The broadband carrier may also need a wayleave from the landlord before it can bring a dedicated line in, so order that line as soon as the lease is agreed: lead times in London buildings often run to months, not weeks.</p>
+
+      <h3>Is data cabling Cat A or Cat B?</h3>
+
+      <p>Usually Cat B. A Cat A floor gives you the raised floor, ceiling grid, lighting and base services; the data cabling, comms room and Wi-Fi are part of the tenant&rsquo;s own fit-out. The <a href="../cat-a-vs-cat-b-office-fit-out/">Cat A vs Cat B office fit-out</a> guide sets out where the line normally falls. Check your lease and the landlord&rsquo;s specification, because some Cat A+ floors arrive with cabling already installed.</p>
+
+      <h3>What happens to the cabling at the end of the lease?</h3>
+
+      <p>Read the reinstatement clause before you install anything. Many leases require you to remove your alterations, including redundant cabling, when you leave. That cost lands in your <a href="../dilapidations-office-lease-explained/">dilapidations office lease</a> settlement. Agree in the licence to alter what can stay, and keep the as-built drawings and labelling schedule: they are what the next tenant, or your landlord&rsquo;s surveyor, will ask for.</p>
+
+      <h2 id="s4">What drives the cost of office data cabling</h2>
+
+      <p>2VP does not publish prices in its guides, and cabling packages vary too much by building to quote a meaningful range. What moves the price is predictable, though, and every item below can be asked for in writing.</p>
+
+      <div class="tbl-scroll">
+      <table class="cost-table">
+        <caption>What moves the price &mdash; and what to ask for in writing</caption>
+        <thead><tr><th>Driver</th><th>Why it moves the price</th><th>Ask for in writing</th></tr></thead>
+        <tbody>
+          <tr><td>Number of outlets</td><td>Each outlet is a cable run, two terminations, a test and a label</td><td>Outlet schedule tied to the layout drawing</td></tr>
+          <tr><td>Cable category and type</td><td>Cat6A is thicker and slower to install than Cat6; shielded cable adds earthing work</td><td>Category, shielded or unshielded, fire performance class</td></tr>
+          <tr><td>Containment</td><td>New basket tray in the ceiling void, or use of the existing raised floor</td><td>Containment route and fixing method</td></tr>
+          <tr><td>Distance to the comms room</td><td>Longer runs mean more cable and more containment</td><td>Comms room location on the drawing</td></tr>
+          <tr><td>Working hours</td><td>Out-of-hours work in an occupied building costs more than daytime work on a closed floor</td><td>Programme with permitted working hours</td></tr>
+          <tr><td>Landlord requirements</td><td>Approved installer lists, riser access rules, fire-stopping specification</td><td>Landlord&rsquo;s fit-out guide, issued to every tenderer</td></tr>
+          <tr><td>Comms room fit-out</td><td>Cabinet, patch panels, dedicated power, cooling, UPS</td><td>Whether switches and Wi-Fi hardware are in or out of the price</td></tr>
+          <tr><td>Wi-Fi design</td><td>Survey or predictive model, access-point count</td><td>Who designs it, and the coverage it is designed to</td></tr>
+          <tr><td>Testing and certification</td><td>Every link tested with a certification tester; manufacturer warranty registration</td><td>Test results for every link at handover</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3>Can existing office cabling be reused?</h3>
+
+      <p>Sometimes, and it is one of the bigger savings available on a refurbishment. Have the existing cabling tested first: if it passes to the category you need and the outlets suit your new layout, keep it. If it fails, or the layout has moved, reuse costs more in fault-finding than it saves. The <a href="../office-fit-out-without-demolition-london/">office fit-out without demolition</a> guide covers what else can usually be kept.</p>
+
+      <h3>How long does office data cabling take?</h3>
+
+      <p>It runs in two stages within the fit-out programme. First fix, the containment and cable pulling, happens while the ceiling and floor voids are open. Second fix, termination and testing, comes near the end, after the decorators. Ask for both stages as named lines in the programme; the <a href="../office-fit-out-timeline-london/">office fit-out timeline</a> guide shows where they sit.</p>
+
+      <h2 id="s5">Fire safety and the standards that apply</h2>
+
+      <p>Cabling is a fire-safety issue as much as an IT one, for three reasons.</p>
+
+      <div class="opts">
+        <div class="opt"><b>Fire-stopping at every penetration.</b> Where cables pass through a fire-resisting wall or floor, the gap has to be sealed to keep the compartment intact. The Building Regulations 2010 require it, and Approved Document B is the guidance. Your landlord will specify the product and method, and will want photographic evidence before the ceiling closes.</div>
+        <div class="opt"><b>Supports that do not fail in a fire.</b> BS 7671 requires electrical wiring systems to be supported so they do not collapse early in a fire and trap people escaping or firefighters, and BS 6701 applies the same thinking to telecoms cabling. In practice that means metal fixings and tray, not plastic ties alone.</div>
+        <div class="opt"><b>Cable fire performance.</b> Data cable sold in the UK carries a Construction Products Regulation fire class, and offices normally specify low-smoke, zero-halogen sheaths. Write the class into the specification so every tenderer prices the same cable.</div>
+      </div>
+
+      <p>Separation matters too. BS EN 50174-2 sets out how far data cables should run from power cables to avoid interference, which is why the two usually share a raised floor in separate compartments. The fire-stopping record is also worth keeping for the responsible person under the Regulatory Reform (Fire Safety) Order 2005, who has to keep the premises&rsquo; fire precautions in order.</p>
+
+      <p class="note">Approved Documents are statutory guidance to the Building Regulations 2010 for England. Your building control body, and your landlord&rsquo;s fire strategy, have the final word on your building.</p>
+
+      <h2 id="s6">How 2VP handles it on every project</h2>
+
+      <p>On a 2VP fit-out the cabling sits inside the same five protections as the rest of the work, with your IT lead or provider setting the specification.</p>
+
+      <ol class="checklist">
+        <li><strong>Open-Book Itemised Quote.</strong> Cabling is priced as its own lines: outlets, containment, comms room, Wi-Fi points, testing. You can compare it against another tender line by line, or take a line out if your IT provider is supplying it.</li>
+        <li><strong>One Named PM, Start to Finish.</strong> One person coordinates your IT lead, the cabling installer, the mechanical and electrical trades and the landlord&rsquo;s building manager, so cable routes are agreed before the ceiling grid goes up.</li>
+        <li><strong>Daily On-Site Report.</strong> Photos of containment, fixings and fire-stopping every working day, taken before ceilings and floors close. They become part of your handover record.</li>
+        <li><strong>Stage Payments, QA-Gated.</strong> The cabling stage is checked against the outlet schedule and the test results before it is paid.</li>
+        <li><strong>12-Month Workmanship Warranty.</strong> Covers the workmanship. Any extended manufacturer&rsquo;s system warranty is separate, registered in your name, and depends on the installer testing every link.</li>
+      </ol>
+
+      <p>Cabling is one package within a wider <a href="../commercial/">office fit-out in London</a>. If you are still at the budgeting stage, the <a href="../../2VP.Calculator.LandingPage.html">2VP estimator</a> gives you an itemised range first, with no email gate.</p>
+
+      <!-- ⟨⟨⟨ ARTICLE BODY END ⟩⟩⟩ -->
+
+    </article>
+
+    <aside>
+      <nav class="toc" aria-label="Table of contents">
+        <div class="toc-h">In this guide</div>
+        <ol>
+          <li><a href="#s1">In 60 seconds</a></li>
+          <li><a href="#s2">What it means</a></li>
+          <li><a href="#s3">When to plan it</a></li>
+          <li><a href="#s4">What drives the cost</a></li>
+          <li><a href="#s5">Fire safety &amp; standards</a></li>
+          <li><a href="#s6">How 2VP handles it</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#advice">Get expert advice</a></li>
+        </ol>
+      </nav>
+    </aside>
+  </div>
+</section>
+
+<section class="art-faq" id="faq">
+  <div class="wrap">
+    <h2>Frequently asked <em>questions</em>.</h2>
+    <div class="faq-row"><h3>Is Cat6A worth it for an office?</h3><p>For most new fit-outs, yes. Cat6A carries 10 Gb/s over the full 100-metre channel and handles the heat from higher-power Power over Ethernet better than Cat6. It is thicker and needs more containment space, so on a short lease in a Wi-Fi-first office Cat6 may be enough. Make it your IT lead&#x27;s written decision.</p></div>
+    <div class="faq-row"><h3>How many data points does an office need?</h3><p>There is no legal number. Count from the furniture layout: every desk position, meeting-room table and screen, printer, Wi-Fi access point, door access reader and camera. Then ask for spare ports on the patch panel and spare room in the containment, so a later layout change does not mean opening the ceiling.</p></div>
+    <div class="faq-row"><h3>Do I need a comms room?</h3><p>A small floor may manage with a cabinet in a ventilated cupboard. A larger floor needs a room with dedicated power, cooling sized to the equipment, a lockable door and no water pipes overhead. Place it centrally so the longest copper run stays inside the 90-metre permanent link limit.</p></div>
+    <div class="faq-row"><h3>Who owns the data cabling at the end of a lease?</h3><p>Check your lease. Many leases require tenants to remove their alterations, including redundant cabling, at the end of the term, and the cost forms part of the dilapidations settlement. Agree in the licence to alter what may stay, and keep the as-built drawings and labelling schedule.</p></div>
+    <div class="faq-row"><h3>Can existing office cabling be reused?</h3><p>Sometimes. Have it tested first. If it passes to the category you need and the outlets suit your new layout, reuse can be a real saving on a refurbishment. If it fails, or the layout has moved, fault-finding usually costs more than new cable.</p></div>
+    <div class="faq-row"><h3>How long does office data cabling take?</h3><p>It runs in two stages inside the fit-out programme: first fix (containment and cable pulling) while ceiling and floor voids are open, and second fix (termination and testing) near the end. Ask for both as named lines in the programme, and order any dedicated fibre line as soon as the lease is agreed.</p></div>
+  </div>
+</section>
+
+<section class="cta-band" id="advice">
+  <div class="wrap">
+    <div class="cta-grid">
+      <div>
+        <div class="eye" style="color:var(--gold)">One outlet schedule. One PM. One test report.</div>
+        <h2>Get expert advice <em>from 2VP.</em></h2>
+        <p>Planning an office fit-out and want the cabling priced line by line? The 2VP estimator itemises the build NET of VAT, and a 2VP PM will walk you through cable routes, the comms room and your landlord&rsquo;s rules before you sign.</p>
+        <div class="cta-actions">
+          <a class="btn btn-cta" href="../../2VP.Calculator.LandingPage.html">Get my itemised estimate <span class="arr">&rarr;</span></a>
+          <a class="btn btn-ghost" href="../../Main.V2.HTML#contact">Book a 20-min consultation</a>
+        </div>
+      </div>
+      <div class="cta-side">
+        <div class="cta-fact"><strong>Open-Book Itemised Quote.</strong> Cabling priced as its own lines, so you can compare tenders.</div>
+        <div class="cta-fact"><strong>12-Month Workmanship Warranty.</strong> Defects after handover are ours to fix.</div>
+        <div class="cta-fact"><strong>Every price NET.</strong> VAT shown in addition, never folded into a headline number.</div>
+        <div class="cta-fact"><strong>5% retention.</strong> 2.5% at practical completion, 2.5% after the 12-month defects period.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="related">
+  <div class="wrap">
+    <h2>Continue <em>reading.</em></h2>
+    <div class="related-grid">
+      <a class="rel-card" href="../office-fit-out-timeline-london/">
+        <div class="rel-img" style="background-image:url('../../images/projects/moncrieff-2.jpg')"></div>
+        <div class="rel-body">
+          <span class="rel-tag">Fit-out &middot; Process</span>
+          <h3>Office fit-out timeline in London</h3>
+          <p>Where first fix, second fix and testing sit in the programme.</p>
+          <div class="rel-foot">Read guide &rarr;</div>
+        </div>
+      </a>
+      <a class="rel-card" href="../cat-a-vs-cat-b-office-fit-out/">
+        <div class="rel-img" style="background-image:url('../../images/nick-elias/ne-amott-01-entrance.jpg')"></div>
+        <div class="rel-body">
+          <span class="rel-tag">Fit-out &middot; Scope</span>
+          <h3>Cat A vs Cat B office fit-out</h3>
+          <p>Who provides the cabling, and where the line usually falls.</p>
+          <div class="rel-foot">Read guide &rarr;</div>
+        </div>
+      </a>
+      <a class="rel-card" href="../office-fit-out-landlord-licence-to-alter/">
+        <div class="rel-img" style="background-image:url('../../images/projects/moncrieff-1.jpg')"></div>
+        <div class="rel-body">
+          <span class="rel-tag">Fit-out &middot; Landlord</span>
+          <h3>Licence to alter for an office fit-out</h3>
+          <p>Getting riser routes and fire-stopping approved first.</p>
+          <div class="rel-foot">Read guide &rarr;</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="foot-brand" href="../../Main.V2.HTML"><img src="../../images/brand/2vp-logo-2025.png" alt="2VP — Design &amp; Build London" /></a>
+        <p class="foot-bio">Built by 2VP — open-book design &amp; build across London. Residential and commercial fit-out. Open-book, insurance-backed.</p>
+        <p class="foot-contact">20 Dawes Road<br>London SW6 7EN<br><a href="tel:+442080508968">020 8050 8968</a> &middot; <a href="mailto:hi@2vp.uk">hi@2vp.uk</a></p>
+      </div>
+      <div>
+        <div class="foot-h">Services</div>
+        <a href="../../2VP.Loft.HTML">Loft Conversions London</a>
+        <a href="../../2VP.Extension.html">House Extensions London</a>
+        <a href="../../Main.V2.HTML#services">Full House Renovations</a>
+        <a href="../../2VP.NewBuild.html">New Build Construction</a>
+        <a href="../../DoorsandWindows.HTML">Windows, Doors &amp; Glazing</a>
+        <a href="../../2vp.BespokeJoinery.HTML">Bespoke Joinery</a>
+      </div>
+      <div>
+        <div class="foot-h">Areas</div>
+        <a href="../../boroughs/fulham.html">Fulham &middot; SW6</a>
+        <a href="../../boroughs/chelsea.html">Chelsea &middot; SW3</a>
+        <a href="../../boroughs/notting-hill.html">Notting Hill &middot; W11</a>
+        <a href="../../boroughs/chiswick.html">Chiswick &middot; W4</a>
+        <a href="../../boroughs/battersea.html">Battersea &middot; SW11</a>
+      </div>
+      <div>
+        <div class="foot-h">Insights</div>
+        <a href="../../2VP.Blog.V2.Blocks.html">All 2VP guides</a>
+        <a href="../commercial/">Commercial fit-out</a>
+        <a href="../office-fit-out-cost-london-2026/">Office fit-out cost London 2026</a>
+        <a href="../two-quotes-same-job-what-is-inside-the-price/">Two quotes, same job</a>
+        <a href="../../2VP.Calculator.LandingPage.html">Cost estimator</a>
+      </div>
+      <div>
+        <div class="foot-h">Follow &amp; verify</div>
+        <a href="https://www.instagram.com/2vprojects/" target="_blank" rel="noopener">Instagram &middot; @2vprojects</a>
+        <a href="https://www.youtube.com/@vladimircastravet-2VP" target="_blank" rel="noopener">YouTube &middot; @vladimircastravet-2VP</a>
+        <a href="https://uk.pinterest.com/2VPRojects/" target="_blank" rel="noopener">Pinterest &middot; @2VPRojects</a>
+        <a href="https://find-and-update.company-information.service.gov.uk/company/14122250" target="_blank" rel="noopener">Companies House &middot; 14122250</a>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <p style="margin:0 0 10px"><strong>2V Projects Ltd</strong> &middot; a company registered in England &amp; Wales &middot; Company No. 14122250 &middot; Registered office: 20 Dawes Road, London SW6 7EN &middot; 020 8050 8968 &middot; Mon&ndash;Fri 08:00&ndash;18:00, Sat 09:00&ndash;13:00.</p>
+      <p style="margin:0">HomePro registered contractor &middot; Glazed partitions supplied by AtoZ Design &amp; Glass, a 2VP company &middot; Insurance certificates available before contract. All prices on this page are NET; VAT in addition.</p>
+      <div class="foot-legal-row">
+        <span>© 2026 2V Projects Ltd</span>
+        <span><a href="../../legal/privacy.html">Privacy</a> &middot; <a href="../../legal/terms.html">Terms</a> &middot; <a href="../../legal/insurance.html">Insurance &amp; Warranty</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  (() => {
+    const burger = document.getElementById('navBurger');
+    const nav = document.getElementById('topNav');
+    if (!burger || !nav) return;
+    burger.addEventListener('click', () => {
+      const open = nav.classList.toggle('mob-open');
+      burger.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  })();
+  (() => {
+    const links = document.querySelectorAll('.toc a');
+    if (!links.length) return;
+    const ids = Array.from(links).map(a => a.getAttribute('href').slice(1));
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => l.style.color = '');
+          const a = document.querySelector('.toc a[href="#' + e.target.id + '"]');
+          if (a) a.style.color = 'var(--olive)';
+        }
+      });
+    }, {rootMargin: '-40% 0px -55% 0px'});
+    ids.forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
+  })();
+</script>
+
+</body>
+
+</html>
