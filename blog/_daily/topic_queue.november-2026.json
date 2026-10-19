@@ -1,0 +1,305 @@
+{
+ "_note": "November 2026 queue rows for blog/_daily/topic_queue.json (blog_queue.py format, plus publish_on / gmb_post_on). Append to topic_queue.json on the machine that runs blog_queue.py. Publish each post on its date only after the live URL returns 200; then run blog_queue.py mark <slug> && build_blog_hub.py. Posts are written under blog/<slug>/ in this branch.",
+ "topics": [
+  {
+   "slug": "best-time-to-renovate-london",
+   "type": "residential",
+   "cluster": "renovation",
+   "title": "Best Time to Renovate in London | 2VP Guide",
+   "primary_keyword": "best time to renovate London",
+   "publish_on": "2026-11-01",
+   "gmb_post_on": "2026-11-01",
+   "status": ""
+  },
+  {
+   "slug": "office-refurbishment-over-christmas",
+   "type": "commercial",
+   "cluster": "fitout-process",
+   "title": "Office Refurbishment Over Christmas: Plan It Now | 2VP",
+   "primary_keyword": "office refurbishment over Christmas",
+   "publish_on": "2026-11-02",
+   "gmb_post_on": "2026-11-02",
+   "status": ""
+  },
+  {
+   "slug": "how-to-vet-a-builder-london",
+   "type": "residential",
+   "cluster": "money",
+   "title": "How to Vet a Builder in London | 2VP Guide",
+   "primary_keyword": "how to vet a builder London",
+   "publish_on": "2026-11-03",
+   "gmb_post_on": "2026-11-03",
+   "status": ""
+  },
+  {
+   "slug": "how-much-office-space-do-i-need",
+   "type": "commercial",
+   "cluster": "fitout-design",
+   "title": "How Much Office Space Do I Need? | 2VP Guide",
+   "primary_keyword": "how much office space do I need",
+   "publish_on": "2026-11-04",
+   "gmb_post_on": "2026-11-04",
+   "status": ""
+  },
+  {
+   "slug": "is-a-builders-quote-legally-binding",
+   "type": "residential",
+   "cluster": "money",
+   "title": "Is a Builder's Quote Legally Binding? | 2VP Guide",
+   "primary_keyword": "is a builders quote legally binding",
+   "publish_on": "2026-11-05",
+   "gmb_post_on": "2026-11-05",
+   "status": ""
+  },
+  {
+   "slug": "what-is-a-cat-a-plus-office",
+   "type": "commercial",
+   "cluster": "fitout-process",
+   "title": "What Is a Cat A+ Office? Plug-and-Play Explained | 2VP",
+   "primary_keyword": "Cat A+ office",
+   "publish_on": "2026-11-06",
+   "gmb_post_on": "2026-11-06",
+   "status": ""
+  },
+  {
+   "slug": "repointing-victorian-house-london",
+   "type": "residential",
+   "cluster": "onsite",
+   "title": "Repointing a Victorian House in London | 2VP Guide",
+   "primary_keyword": "repointing a Victorian house London",
+   "publish_on": "2026-11-07",
+   "gmb_post_on": "2026-11-07",
+   "status": ""
+  },
+  {
+   "slug": "office-move-checklist-london",
+   "type": "commercial",
+   "cluster": "fitout-process",
+   "title": "Office Move Checklist for London Businesses | 2VP",
+   "primary_keyword": "office move checklist London",
+   "publish_on": "2026-11-08",
+   "gmb_post_on": "2026-11-08",
+   "status": ""
+  },
+  {
+   "slug": "do-i-need-building-control-internal-works",
+   "type": "residential",
+   "cluster": "planning",
+   "title": "Do I Need Building Control for Internal Works? | 2VP",
+   "primary_keyword": "do I need building control for internal works",
+   "publish_on": "2026-11-09",
+   "gmb_post_on": "2026-11-09",
+   "status": ""
+  },
+  {
+   "slug": "fire-safety-office-fit-out",
+   "type": "commercial",
+   "cluster": "fitout-technical",
+   "title": "Office Fire Safety in a Fit-Out | 2VP Guide",
+   "primary_keyword": "fire safety office fit out",
+   "publish_on": "2026-11-10",
+   "gmb_post_on": "2026-11-10",
+   "status": ""
+  },
+  {
+   "slug": "how-long-does-a-london-renovation-take",
+   "type": "residential",
+   "cluster": "renovation",
+   "title": "How Long Does a London Renovation Take? | 2VP Guide",
+   "primary_keyword": "how long does a London renovation take",
+   "publish_on": "2026-11-11",
+   "gmb_post_on": "2026-11-11",
+   "status": ""
+  },
+  {
+   "slug": "office-refurbishment-while-occupied",
+   "type": "commercial",
+   "cluster": "fitout-process",
+   "title": "Office Refurbishment While Occupied | 2VP Guide",
+   "primary_keyword": "office refurbishment while occupied",
+   "publish_on": "2026-11-12",
+   "gmb_post_on": "2026-11-12",
+   "status": ""
+  },
+  {
+   "slug": "matching-bricks-victorian-house-extension",
+   "type": "residential",
+   "cluster": "extension",
+   "title": "Matching Bricks on a Victorian Extension | 2VP Guide",
+   "primary_keyword": "matching bricks Victorian house",
+   "publish_on": "2026-11-13",
+   "gmb_post_on": "2026-11-13",
+   "status": ""
+  },
+  {
+   "slug": "office-ventilation-requirements-uk",
+   "type": "commercial",
+   "cluster": "fitout-technical",
+   "title": "Office Ventilation Requirements in the UK | 2VP Guide",
+   "primary_keyword": "office ventilation requirements",
+   "publish_on": "2026-11-14",
+   "gmb_post_on": "2026-11-14",
+   "status": ""
+  },
+  {
+   "slug": "loft-conversion-building-regulations-london",
+   "type": "residential",
+   "cluster": "loft",
+   "title": "Loft Conversion Building Regulations in London | 2VP",
+   "primary_keyword": "loft conversion building regulations",
+   "publish_on": "2026-11-15",
+   "gmb_post_on": "2026-11-15",
+   "status": ""
+  },
+  {
+   "slug": "mees-epc-rules-office-tenants",
+   "type": "commercial",
+   "cluster": "fitout-process",
+   "title": "MEES and EPC Rules for Office Tenants | 2VP Guide",
+   "primary_keyword": "MEES office tenant",
+   "publish_on": "2026-11-16",
+   "gmb_post_on": "2026-11-16",
+   "status": ""
+  },
+  {
+   "slug": "hidden-renovation-costs-london-homeowners",
+   "type": "residential",
+   "cluster": "money",
+   "title": "Hidden Renovation Costs for London Homeowners | 2VP",
+   "primary_keyword": "hidden renovation costs",
+   "publish_on": "2026-11-17",
+   "gmb_post_on": "2026-11-17",
+   "status": ""
+  },
+  {
+   "slug": "accessible-office-design-uk",
+   "type": "commercial",
+   "cluster": "fitout-design",
+   "title": "Accessible Office Design: Part M and the Law | 2VP",
+   "primary_keyword": "accessible office design",
+   "publish_on": "2026-11-18",
+   "gmb_post_on": "2026-11-18",
+   "status": ""
+  },
+  {
+   "slug": "does-a-loft-conversion-add-value-london",
+   "type": "residential",
+   "cluster": "loft",
+   "title": "Does a Loft Conversion Add Value in London? | 2VP",
+   "primary_keyword": "does a loft conversion add value",
+   "publish_on": "2026-11-19",
+   "gmb_post_on": "2026-11-19",
+   "status": ""
+  },
+  {
+   "slug": "office-lighting-design-fit-out",
+   "type": "commercial",
+   "cluster": "fitout-technical",
+   "title": "Office Lighting Design for a Fit-Out | 2VP Guide",
+   "primary_keyword": "office lighting design",
+   "publish_on": "2026-11-20",
+   "gmb_post_on": "2026-11-20",
+   "status": ""
+  },
+  {
+   "slug": "ensuite-loft-conversion-london",
+   "type": "residential",
+   "cluster": "loft",
+   "title": "Adding an En-Suite to a Loft Conversion | 2VP Guide",
+   "primary_keyword": "ensuite loft conversion",
+   "publish_on": "2026-11-21",
+   "gmb_post_on": "2026-11-21",
+   "status": ""
+  },
+  {
+   "slug": "office-kitchen-washroom-fit-out",
+   "type": "commercial",
+   "cluster": "fitout-design",
+   "title": "Office Kitchen and Washroom Fit-Out | 2VP Guide",
+   "primary_keyword": "office kitchen fit out",
+   "publish_on": "2026-11-22",
+   "gmb_post_on": "2026-11-22",
+   "status": ""
+  },
+  {
+   "slug": "cost-of-design-and-build-vs-traditional-tender",
+   "type": "residential",
+   "cluster": "money",
+   "title": "Design and Build vs Traditional Tender Cost | 2VP",
+   "primary_keyword": "design and build vs traditional tender cost",
+   "publish_on": "2026-11-23",
+   "gmb_post_on": "2026-11-23",
+   "status": ""
+  },
+  {
+   "slug": "phone-booths-vs-meeting-rooms-office",
+   "type": "commercial",
+   "cluster": "fitout-design",
+   "title": "Phone Booths vs Meeting Rooms in an Office | 2VP",
+   "primary_keyword": "office phone booths vs meeting rooms",
+   "publish_on": "2026-11-24",
+   "gmb_post_on": "2026-11-24",
+   "status": ""
+  },
+  {
+   "slug": "open-plan-kitchen-extension-london",
+   "type": "residential",
+   "cluster": "extension",
+   "title": "Open Plan Kitchen Extension in London | 2VP Guide",
+   "primary_keyword": "open plan kitchen extension London",
+   "publish_on": "2026-11-25",
+   "gmb_post_on": "2026-11-25",
+   "status": ""
+  },
+  {
+   "slug": "office-data-cabling-fit-out",
+   "type": "commercial",
+   "cluster": "fitout-technical",
+   "title": "Office Data Cabling for a Fit-Out | 2VP Guide",
+   "primary_keyword": "office data cabling",
+   "publish_on": "2026-11-26",
+   "gmb_post_on": "2026-11-26",
+   "status": ""
+  },
+  {
+   "slug": "mansion-block-renovation-london",
+   "type": "residential",
+   "cluster": "renovation",
+   "title": "Mansion Block Flat Renovation in London | 2VP Guide",
+   "primary_keyword": "mansion block renovation London",
+   "publish_on": "2026-11-27",
+   "gmb_post_on": "2026-11-27",
+   "status": ""
+  },
+  {
+   "slug": "office-fit-out-capital-allowances-vat",
+   "type": "commercial",
+   "cluster": "fitout-cost",
+   "title": "Office Fit-Out Capital Allowances and VAT | 2VP Guide",
+   "primary_keyword": "office fit out capital allowances",
+   "publish_on": "2026-11-28",
+   "gmb_post_on": "2026-11-28",
+   "status": ""
+  },
+  {
+   "slug": "listed-building-renovation-london",
+   "type": "residential",
+   "cluster": "planning",
+   "title": "Listed Building Renovation in London | 2VP Guide",
+   "primary_keyword": "listed building renovation London",
+   "publish_on": "2026-11-29",
+   "gmb_post_on": "2026-11-29",
+   "status": ""
+  },
+  {
+   "slug": "how-to-choose-office-fit-out-company-london",
+   "type": "commercial",
+   "cluster": "fitout-process",
+   "title": "How to Choose an Office Fit-Out Company in London | 2VP",
+   "primary_keyword": "office fit out company London",
+   "publish_on": "2026-11-30",
+   "gmb_post_on": "2026-11-30",
+   "status": ""
+  }
+ ]
+}
